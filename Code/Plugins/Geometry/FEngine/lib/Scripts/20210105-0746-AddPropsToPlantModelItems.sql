@@ -1,0 +1,2 @@
+﻿ALTER TABLE PlantModelItems ADD materialID INTEGER REFERENCES ConnectorIDs(ID) on delete set null;
+ALTER TABLE PlantModelItems ADD failureCriteriaID INTEGER REFERENCES ConnectorIDs(ID) on delete set null;

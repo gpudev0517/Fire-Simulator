@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>FRI3D</DisplayName>
+    <Description>FIREPRA Simulation and Visualization Framework.</Description>
+    <Version>0.5</Version>
+    <ReleaseDate>2019-12-01</ReleaseDate>
+    <Name>FRI3D</Name>
+    <Licenses>
+        <License name="FRI3D License Agreement" file="license.txt" />
+    </Licenses>
+    <Default>script</Default>
+    <Script>installscript.qs</Script>
+    <ForcedInstallation>true</ForcedInstallation>
+</Package>

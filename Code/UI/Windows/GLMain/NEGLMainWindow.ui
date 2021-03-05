@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NEGLMainWindow</class>
+ <widget class="QMainWindow" name="NEGLMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>5</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>OpenGL</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="NEMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionFrameSelection"/>
+    <addaction name="separator"/>
+    <addaction name="actionGrid"/>
+    <addaction name="actionDraw_render_area"/>
+    <addaction name="actionShow_Axes"/>
+    <addaction name="actionShow_OSD"/>
+    <addaction name="actionDynamicQuality"/>
+    <addaction name="separator"/>
+    <addaction name="actionSplit_horizontally"/>
+    <addaction name="actionSplit_vertically"/>
+    <addaction name="actionSplit_to_quad"/>
+    <addaction name="separator"/>
+    <addaction name="actionClip"/>
+    <addaction name="separator"/>
+    <addaction name="actionMaximize"/>
+    <addaction name="actionHide"/>
+    <addaction name="actionClose"/>
+   </widget>
+   <addaction name="menuView"/>
+  </widget>
+  <action name="actionGrid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show grid</string>
+   </property>
+  </action>
+  <action name="actionDraw_render_area">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/photo.png</normaloff>:/Neutrino/Resources/16/photo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show render area</string>
+   </property>
+  </action>
+  <action name="actionSplit_horizontally">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/application-split.png</normaloff>:/Neutrino/Resources/16/application-split.png</iconset>
+   </property>
+   <property name="text">
+    <string>Split horizontally</string>
+   </property>
+  </action>
+  <action name="actionSplit_vertically">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/application-split-vertical.png</normaloff>:/Neutrino/Resources/16/application-split-vertical.png</iconset>
+   </property>
+   <property name="text">
+    <string>Split vertically</string>
+   </property>
+  </action>
+  <action name="actionSplit_to_quad">
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/application-split-tile.png</normaloff>:/Neutrino/Resources/16/application-split-tile.png</iconset>
+   </property>
+   <property name="text">
+    <string>Split to quad</string>
+   </property>
+  </action>
+  <action name="actionShow_OSD">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/application_side_boxes.png</normaloff>:/Neutrino/Resources/16/application_side_boxes.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show OSD</string>
+   </property>
+  </action>
+  <action name="actionClip">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/cut.png</normaloff>:/Neutrino/Resources/16/cut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clip</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/application_delete.png</normaloff>:/Neutrino/Resources/16/application_delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionShow_Axes">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show Axes</string>
+   </property>
+  </action>
+  <action name="actionFrameSelection">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/shape_handles.png</normaloff>:/Neutrino/Resources/16/shape_handles.png</iconset>
+   </property>
+   <property name="text">
+    <string>Frame Selection</string>
+   </property>
+   <property name="shortcut">
+    <string>F</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WidgetWithChildrenShortcut</enum>
+   </property>
+   <property name="autoRepeat">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionHide">
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/application_put.png</normaloff>:/Neutrino/Resources/16/application_put.png</iconset>
+   </property>
+   <property name="text">
+    <string>Hide</string>
+   </property>
+  </action>
+  <action name="actionMaximize">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/arrow_out.png</normaloff>:/Neutrino/Resources/16/arrow_out.png</iconset>
+   </property>
+   <property name="text">
+    <string>Maximized</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WidgetWithChildrenShortcut</enum>
+   </property>
+   <property name="autoRepeat">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionDynamicQuality">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Dynamic Quality</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>NEMenuBar</class>
+   <extends>QMenuBar</extends>
+   <header>Widgets/MenuBar/NEMenuBar.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../neutrino.qrc"/>
+ </resources>
+ <connections/>
+ <slots>
+  <slot>maximizeGLWindow(bool)</slot>
+ </slots>
+</ui>

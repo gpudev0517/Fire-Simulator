@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>FRI3D</Name>
+    <Version>0.1</Version>
+    <Title>FRI3D Installer</Title>
+    <Publisher>CENTROID LAB/Publisher>
+    <WizardStyle>Modern</WizardStyle>
+    <Banner>fri3d_splash_screen_v3.png</Banner>
+    <Watermark>empty_2x220.png</Watermark>
+    <ProductUrl>http://www.centroidlab.com/FRI3D</ProductUrl>
+    <StartMenuDir>FRI3D</StartMenuDir>
+    <TitleColor>#ebebeb</TitleColor>
+    <InstallerWindowIcon>Main-setup.png</InstallerWindowIcon>
+    <InstallerApplicationIcon>Main-setup</InstallerApplicationIcon>
+    <TargetDir>@HomeDir@/FRI3D</TargetDir>
+    <RunProgram>@TargetDir@/FRI3D.bat</RunProgram>
+    <RunProgramDescription>Launch FRI3D</RunProgramDescription>
+    <AllowSpaceInPath>true</AllowSpaceInPath>
+    <RemoveTargetDir>true</RemoveTargetDir>
+	<RemoteRepositories>
+		<Repository>
+			<Url>http://www.centroidlab.com/FRI3D/FRI3D_Windows_vc141/</Url>
+		</Repository>
+	</RemoteRepositories>
+</Installer>

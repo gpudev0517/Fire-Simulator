@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>FRI3D</Name>
+    <Version>0.1</Version>
+    <Title>FRI3D Installer</Title>
+    <Publisher>CENTROID LAB & Idaho National Laboratories</Publisher>
+    <WizardStyle>Modern</WizardStyle>
+    <Banner>fri3d_splash_screen_v3.png</Banner>
+    <Watermark>empty_2x220.png</Watermark>
+    <ProductUrl>http://www.centroidlab.com/FRI3D</ProductUrl>
+    <StartMenuDir>FRI3D</StartMenuDir>
+    <TitleColor>#ebebeb</TitleColor>
+    <InstallerWindowIcon>Main-setup.png</InstallerWindowIcon>
+    <InstallerApplicationIcon>Main-setup</InstallerApplicationIcon>
+    <TargetDir>@HomeDir@/FRI3D</TargetDir>
+    <RunProgram>@TargetDir@/Fri3D.app/Contents/MacOS/fri3d.sh</RunProgram>
+    <RunProgramDescription>Launch FRI3D</RunProgramDescription>
+    <AllowSpaceInPath>true</AllowSpaceInPath>
+    <RemoveTargetDir>true</RemoveTargetDir>
+</Installer>

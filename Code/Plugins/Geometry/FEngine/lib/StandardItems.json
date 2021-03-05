@@ -1,0 +1,139 @@
+{
+  "materials": [
+    {
+      "name": "Default",
+      "desc": "Conservative Default Value",
+      "type": "foMaterial",
+      "connectorID": 0,
+      "conductivity": 0.1,
+      "specificHeat": 0.1,
+      "density": 500,
+      "emissivity": 0.92,
+      "thickness": 0.001
+    },
+    {
+      "name": "Common 4in Brick",
+      "desc": "Brick from NUREG-1805, Table 2-3",
+      "type": "foMaterial",
+      "connectorID": 0,
+      "conductivity": 0.8,
+      "specificHeat": 0.8,
+      "density": 2600,
+      "emissivity": 0.84,
+      "thickness": 0.089
+    },
+    {
+      "name": "Concrete 8in",
+      "desc": "Concrete from NUREG-1805, Table 2-3",
+      "type": "foMaterial",
+      "connectorID": 0,
+      "conductivity": 1.6,
+      "specificHeat": 0.75,
+      "density": 2400,
+      "emissivity": 0.92,
+      "thickness": 0.203
+    },
+    {
+      "name": "Gypsum dbl 1/2in.",
+      "desc": "Gypsum from SFPE Handbook, Table B.6",
+      "type": "foMaterial",
+      "connectorID": 0,
+      "conductivity": 0.17,
+      "specificHeat": 1.1,
+      "density": 960,
+      "emissivity": 0.92,
+      "thickness": 0.0254
+    },
+    {
+      "name": "Steel Conduit 3/4in.",
+      "desc": "Steel NUREG1805 Table 2-3",
+      "type": "foMaterial",
+      "connectorID": 0,
+      "conductivity": 54,
+      "specificHeat": 0.465,
+      "density": 7850,
+      "emissivity": 0.28,
+      "thickness": 0.00125
+    },
+    {
+      "name": "Steel Conduit 1in.",
+      "desc": "Steel NUREG1805 Table 2-3",
+      "type": "foMaterial",
+      "connectorID": 0,
+      "conductivity": 54,
+      "specificHeat": 0.465,
+      "density": 7850,
+      "emissivity": 0.28,
+      "thickness": 0.00145
+    },
+    {
+      "name": "Steel Conduit 1.25 - 2 in.",
+      "desc": "Steel NUREG1805 Table 2-3",
+      "type": "foMaterial",
+      "connectorID": 0,
+      "conductivity": 54,
+      "specificHeat": 0.465,
+      "density": 7850,
+      "emissivity": 0.28,
+      "thickness": 0.00165
+    },
+    {
+      "name": "Steel Cable Tray",
+      "desc": "Steel NUREG1805 Table 2-3",
+      "type": "foMaterial",
+      "connectorID": 0,
+      "conductivity": 54,
+      "specificHeat": 0.465,
+      "density": 7850,
+      "emissivity": 0.28,
+      "thickness": 0.00125
+    }
+  ],
+  "defaultSimInfo": {
+    "simulation time": 900,
+    "pressure": 101325,
+    "humidity": 50,
+    "interior temperature": 20,
+    "exterior temperature": 20,
+    "default component Fail Temp": 205,
+    "cfast props": {
+      "text output interval": 50,
+      "spreadsheet output interval": 10,
+      "dfltCableType": "thermoplastic",
+      "smokeview output interval": 10,
+      "maximum time step": 2,
+      "lower oxygen limit": 0.15,
+      "adiabatic surfaces": "false",
+      "default material": "Concrete 8in"
+    },
+    "fds props": []
+  },
+  "defaultCriterian": {
+    "cfast": {
+      "type": "time",
+      "value": [ 0 ],
+      "percent": [ 1 ]
+    },
+    "fds props": []
+  },
+  "heatSoakTable": {
+    "thermoset": {
+      "temps":     [330, 335, 340, 345, 350, 360, 370, 380, 390, 400, 410, 430, 450, 470, 490, 99999 ],
+      "failTimes": [28,  28,  24,  20,  16,  13,  10,  9,   8,   7,   6,   5,   4,   3,   2,   1 ]
+    },
+    "thermoplastic": {
+      "temps":     [ 205, 220, 240, 245, 260, 275, 290, 300, 315, 330, 345, 355, 370, 99999 ],
+      "failTimes": [ 30,  25,  20,  15,  10,  8,   7,   6,   5,   4,   3,   2,   1,   0 ]
+    }
+  },
+  "heatSoakHFTable": {
+    "thermoset": {
+      "temps":     [ 1,   2,     3,     4,     5,    6,    7,     8,    9,    10,   11, 14, 16, 18, 99999 ],
+      "failTimes": [ 209, 209, 104.5, 69.66, 52.25, 41.8, 34.8, 29.85, 25.8, 32.2, 20.9, 19, 12, 6,  1 ]
+    },
+    "thermoplastic": {
+      "temps": [     1,   2,   3,  4,    5,    6,    8,  10, 11, 14, 16, 99999 ],
+      "failTimes": [ 114, 114, 57, 38,  28.5,  28.8, 19, 10, 6,  4,  2,  1 ]
+    }
+  }
+}

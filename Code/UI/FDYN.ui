@@ -1,0 +1,2002 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GUI</class>
+ <widget class="QMainWindow" name="GUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1066</width>
+    <height>728</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::StrongFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>Neutrino</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>22</width>
+    <height>22</height>
+   </size>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>true</bool>
+  </property>
+  <property name="dockOptions">
+   <set>QMainWindow::AllowNestedDocks|QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks</set>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="glArea">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1066</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="NEMenu" name="menuFile">
+    <property name="tearOffEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSaveAs"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionImport"/>
+    <addaction name="actionImportFRANX"/>
+    <addaction name="actionReference"/>
+    <addaction name="actionArchive"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionPreferences"/>
+    <addaction name="actionExit"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="NEMenu" name="menuWindow">
+    <property name="tearOffEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>Window</string>
+    </property>
+    <addaction name="actionActivateSceneInspector"/>
+    <addaction name="actionActivateZoneInspector"/>
+    <addaction name="actionActivateSystemInspector"/>
+    <addaction name="actionActivateSceneBuilder"/>
+    <addaction name="actionActivatePropertyEditor"/>
+    <addaction name="actionActivateTimeline"/>
+    <addaction name="separator"/>
+    <addaction name="actionActivateMainWindow"/>
+    <addaction name="separator"/>
+    <addaction name="actionShowAllWindows"/>
+    <addaction name="actionHideAllWindows"/>
+   </widget>
+   <widget class="NEMenu" name="menuEdit">
+    <property name="tearOffEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <widget class="NEMenu" name="menuAdd">
+     <property name="font">
+      <font>
+       <family>MS Shell Dlg 2</family>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="tearOffEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="title">
+      <string>Add</string>
+     </property>
+     <property name="icon">
+      <iconset resource="FDYN.qrc">
+       <normaloff>:/Neutrino/Resources/16/list-add.png</normaloff>:/Neutrino/Resources/16/list-add.png</iconset>
+     </property>
+     <widget class="NEMenu" name="menuVisual">
+      <property name="tearOffEnabled">
+       <bool>true</bool>
+      </property>
+      <property name="title">
+       <string>Visual</string>
+      </property>
+      <widget class="NEMenu" name="menuCameras">
+       <property name="tearOffEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="title">
+        <string>Cameras</string>
+       </property>
+       <addaction name="separator"/>
+      </widget>
+      <widget class="NEMenu" name="menuLights">
+       <property name="tearOffEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="title">
+        <string>Lights</string>
+       </property>
+       <addaction name="separator"/>
+      </widget>
+      <widget class="NEMenu" name="menuMaterials">
+       <property name="tearOffEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="title">
+        <string>Materials</string>
+       </property>
+       <addaction name="separator"/>
+      </widget>
+      <widget class="NEMenu" name="menuOSD">
+       <property name="tearOffEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="title">
+        <string>OSD</string>
+       </property>
+       <addaction name="separator"/>
+      </widget>
+      <widget class="NEMenu" name="menuGizmo">
+       <property name="tearOffEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="title">
+        <string>Gizmo</string>
+       </property>
+       <addaction name="separator"/>
+      </widget>
+      <addaction name="menuCameras"/>
+      <addaction name="menuLights"/>
+      <addaction name="menuMaterials"/>
+      <addaction name="menuOSD"/>
+      <addaction name="menuGizmo"/>
+     </widget>
+     <addaction name="separator"/>
+     <addaction name="separator"/>
+     <addaction name="menuVisual"/>
+    </widget>
+    <addaction name="menuAdd"/>
+    <addaction name="actionRemove"/>
+    <addaction name="separator"/>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="separator"/>
+    <addaction name="actionGroup"/>
+    <addaction name="actionUngroup"/>
+    <addaction name="actionParent"/>
+    <addaction name="actionUnParent"/>
+    <addaction name="separator"/>
+    <addaction name="actionCut"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionPaste"/>
+    <addaction name="actionDuplicate"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="tearOffEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionOpenGL_update"/>
+    <addaction name="actionUpdateFrameBuffer"/>
+    <addaction name="actionMaximize"/>
+    <addaction name="actionFull_screen"/>
+    <addaction name="actionShowHideToobar"/>
+    <addaction name="actionStatus_bar"/>
+   </widget>
+   <widget class="NEMenu" name="menuHelp">
+    <property name="tearOffEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="actionHelp"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuWindow"/>
+   <addaction name="menuView"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="sizeIncrement">
+    <size>
+     <width>38</width>
+     <height>38</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>Main Toolbar</string>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="statusTip">
+    <string/>
+   </property>
+   <property name="whatsThis">
+    <string/>
+   </property>
+   <property name="movable">
+    <bool>true</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="actionOpen"/>
+   <addaction name="actionSave"/>
+   <addaction name="actionSaveAs"/>
+   <addaction name="separator"/>
+   <addaction name="actionActivateSceneInspector"/>
+   <addaction name="actionActivateZoneInspector"/>
+   <addaction name="actionActivateSystemInspector"/>
+   <addaction name="actionActivateSceneBuilder"/>
+   <addaction name="actionActivatePropertyEditor"/>
+   <addaction name="actionActivateMessageWindow"/>
+   <addaction name="actionActivateMainWindow"/>
+   <addaction name="actionActivateTimeline"/>
+   <addaction name="separator"/>
+   <addaction name="actionOpenGL_update"/>
+   <addaction name="actionPreferences"/>
+   <addaction name="separator"/>
+  </widget>
+  
+  <widget class="NEDockWidget" name="sceneInspectorDock">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>250</width>
+     <height>46</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>524287</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="windowIcon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/sceneInspector_16.png</normaloff>:/Neutrino/Resources/16_32/sceneInspector_16.png</iconset>
+   </property>
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="windowTitle">
+    <string>Scene Inspector</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="NESceneInspectorWindow" name="sceneInspector">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+   </widget>
+  </widget>
+  
+  
+  
+  <widget class="NEDockWidget" name="zoneInspectorDock">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>250</width>
+     <height>46</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>524287</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="windowIcon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/zoneInspector_16.png</normaloff>:/Neutrino/Resources/16_32/zoneInspector_16.png</iconset>
+   </property>
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="windowTitle">
+    <string>Zone Inspector</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="FZoneInspectorWindow" name="zoneInspector">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+   </widget>
+  </widget>
+  
+  
+  <widget class="NEDockWidget" name="sceneBuilderDock">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>250</width>
+     <height>46</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>524287</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="windowIcon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/sceneBuilder_16.png</normaloff>:/Neutrino/Resources/16_32/sceneBuilder_16.png</iconset>
+   </property>
+   <property name="windowTitle">
+    <string>Scene Builder</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="NESceneBuilderWindow" name="sceneBuilder">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+   </widget>
+  </widget>
+  
+  <widget class="NEDockWidget" name="propertyEditorDock">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>250</width>
+     <height>58</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>524287</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="windowIcon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/propertyEditor_16.png</normaloff>:/Neutrino/Resources/16_32/propertyEditor_16.png</iconset>
+   </property>
+   <property name="windowTitle">
+    <string>Property Editor</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="NEPropertyEditorWindow" name="propertyEditor">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+   </widget>
+  </widget>
+  
+  <widget class="NEDockWidget" name="messageDock">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>300</width>
+     <height>130</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>524287</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="windowIcon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/messages_16.png</normaloff>:/Neutrino/Resources/16_32/messages_16.png</iconset>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="windowTitle">
+    <string>Messages</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="NEMessageWindow" name="messageWindow">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>200</width>
+      <height>100</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+  
+  <widget class="QToolBar" name="timelineToolbar">
+   <property name="windowTitle">
+    <string>Timeline</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>BottomToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  
+  
+  <widget class="NEDockWidget" name="systemInspectorDock">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>250</width>
+     <height>46</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>524287</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="windowIcon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/systemInspector_16.png</normaloff>:/Neutrino/Resources/16_32/systemInspector_16.png</iconset>
+   </property>
+   <property name="windowTitle">
+    <string>System Inspector</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="NESystemInspectorWindow" name="systemInspector">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+   </widget>
+  </widget>
+  
+  
+  
+  <widget class="QToolBar" name="sideBarAppearce">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>36</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>Node Appearance ToolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionSet_Selected_Visible"/>
+   <addaction name="actionSet_Selected_Hidden"/>
+   <addaction name="actionSet_Selected_Bounding_Box"/>
+   <addaction name="actionWireframe"/>
+   <addaction name="actionSet_Selected_Flat_Shaded"/>
+   <addaction name="actionSet_Selected_Smooth_Shaded"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="sideBarNodeState">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>36</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>Node State ToolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionSet_Selected_Active"/>
+   <addaction name="actionSet_Selected_Cache"/>
+   <addaction name="actionSet_Selected_Inactive"/>
+  </widget>
+  <widget class="QToolBar" name="sideBarTransform">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>36</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>Node Transform ToolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionCursor"/>
+   <addaction name="actionTranslate"/>
+   <addaction name="actionRotate"/>
+   <addaction name="actionScale"/>
+   <addaction name="actionCopy_Transforms"/>
+   <addaction name="actionSnap"/>
+  </widget>
+  <widget class="NEShelfBar" name="shelfBar">
+   <property name="windowTitle">
+    <string>Shelf</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/open_32.png</normaloff>:/Neutrino/Resources/16_32/open_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Open</string>
+   </property>
+   <property name="toolTip">
+    <string>Open a scene</string>
+   </property>
+   <property name="statusTip">
+    <string>Open a scene</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/save_32.png</normaloff>:/Neutrino/Resources/16_32/save_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="toolTip">
+    <string>Save scene</string>
+   </property>
+   <property name="statusTip">
+    <string>Save scene</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16/system-log-out.png</normaloff>:/Neutrino/Resources/16/system-log-out.png</iconset>
+   </property>
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+   <property name="toolTip">
+    <string>Exit the software</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/new_32.png</normaloff>:/Neutrino/Resources/16_32/new_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+   <property name="toolTip">
+    <string>Create a new scene file</string>
+   </property>
+   <property name="statusTip">
+    <string>Create a new scene file</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Shell Dlg 2</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16/application-certificate.png</normaloff>:/Neutrino/Resources/16/application-certificate.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+   <property name="toolTip">
+    <string>About neutrino</string>
+   </property>
+   <property name="statusTip">
+    <string>About neutrino</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionSaveAs">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/saveas_32.png</normaloff>:/Neutrino/Resources/16_32/saveas_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save As</string>
+   </property>
+   <property name="toolTip">
+    <string>Save scene as</string>
+   </property>
+   <property name="statusTip">
+    <string>Save scene as</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionActivateScriptEditor">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/scriptEditor_32.png</normaloff>:/Neutrino/Resources/16_32/scriptEditor_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Script Editor</string>
+   </property>
+   <property name="toolTip">
+    <string>Script Editor</string>
+   </property>
+   <property name="statusTip">
+    <string>Script Editor</string>
+   </property>
+  </action>
+  <action name="actionActivateSceneInspector">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/sceneInspector_32.png</normaloff>:/Neutrino/Resources/16_32/sceneInspector_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Scene Inspector</string>
+   </property>
+   <property name="toolTip">
+    <string>Scene Inspector</string>
+   </property>
+   <property name="statusTip">
+    <string>Scene Inspector</string>
+   </property>
+  </action>
+  
+   <action name="actionActivateZoneInspector">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/zoneInspector_32.png</normaloff>:/Neutrino/Resources/16_32/zoneInspector_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zone Inspector</string>
+   </property>
+   <property name="toolTip">
+    <string>Zone Inspector</string>
+   </property>
+   <property name="statusTip">
+    <string>Zone Inspector</string>
+   </property>
+  </action>
+  
+  
+  <action name="actionActivateSceneBuilder">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/sceneBuilder_32.png</normaloff>:/Neutrino/Resources/16_32/sceneBuilder_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Scene Builder</string>
+   </property>
+   <property name="toolTip">
+    <string>Scene Builder</string>
+   </property>
+   <property name="statusTip">
+    <string>Scene Builder</string>
+   </property>
+  </action>
+  <action name="actionRemove">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16/list-remove.png</normaloff>:/Neutrino/Resources/16/list-remove.png</iconset>
+   </property>
+   <property name="text">
+    <string>Remove</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="actionActivatePropertyEditor">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/propertyEditor_32.png</normaloff>:/Neutrino/Resources/16_32/propertyEditor_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Property Editor</string>
+   </property>
+   <property name="toolTip">
+    <string>Property Editor</string>
+   </property>
+   <property name="statusTip">
+    <string>Property Editor</string>
+   </property>
+  </action>
+  <action name="actionActivateMessageWindow">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/messages_32.png</normaloff>:/Neutrino/Resources/16_32/messages_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Messages</string>
+   </property>
+   <property name="toolTip">
+    <string>Message Window</string>
+   </property>
+   <property name="statusTip">
+    <string>Message Window</string>
+   </property>
+  </action>
+  <action name="actionActivateConnectionInspector">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/connectionInspector_32.png</normaloff>:/Neutrino/Resources/16_32/connectionInspector_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Connection Inspector</string>
+   </property>
+   <property name="iconText">
+    <string>Connection Inspector</string>
+   </property>
+   <property name="toolTip">
+    <string>Connection Inspector</string>
+   </property>
+   <property name="statusTip">
+    <string>Connection Inspector</string>
+   </property>
+  </action>
+  <action name="actionRender_Settings">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16/applications-multimedia.png</normaloff>:/Neutrino/Resources/16/applications-multimedia.png</iconset>
+   </property>
+   <property name="text">
+    <string>Render Settings</string>
+   </property>
+   <property name="shortcut">
+    <string/>
+   </property>
+  </action>
+  <action name="actionRender_Current_Frame">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16/image-x-generic.png</normaloff>:/Neutrino/Resources/16/image-x-generic.png</iconset>
+   </property>
+   <property name="text">
+    <string>Render Current</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+  </action>
+  <action name="actionOpenGL_update">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/openGL_32.png</normaloff>:/Neutrino/Resources/16_32/openGL_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>OpenGL update</string>
+   </property>
+   <property name="toolTip">
+    <string>Enable/Disable OpenGL update</string>
+   </property>
+   <property name="statusTip">
+    <string>Enable/Disable OpenGL update</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16/help-browser.png</normaloff>:/Neutrino/Resources/16/help-browser.png</iconset>
+   </property>
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+  <action name="actionActivateTimeline">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/timeLine_32.png</normaloff>:/Neutrino/Resources/16_32/timeLine_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Timeline</string>
+   </property>
+   <property name="toolTip">
+    <string>Timeline</string>
+   </property>
+   <property name="statusTip">
+    <string>Timeline</string>
+   </property>
+  </action>
+  <action name="actionRender_Delete_Sequence">
+   <property name="text">
+    <string>Render Delete Sequence</string>
+   </property>
+   <property name="toolTip">
+    <string>Render and deletes each frame subsequently</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F6</string>
+   </property>
+  </action>
+  <action name="actionGL_Buffers">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>GL Buffers</string>
+   </property>
+  </action>
+  <action name="actionUpdateFrameBuffer">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/openGL_32.png</normaloff>:/Neutrino/Resources/16_32/openGL_32.png</iconset>
+   </property>
+   <property name="text">
+    <string> Render Update</string>
+   </property>
+   <property name="toolTip">
+    <string>Continously Update Render Buffers</string>
+   </property>
+  </action>
+  <action name="actionActivateExpressionEditor">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/expressionEditor_32.png</normaloff>:/Neutrino/Resources/16_32/expressionEditor_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Expression Editor</string>
+   </property>
+   <property name="statusTip">
+    <string>Expression Editor</string>
+   </property>
+  </action>
+  <action name="actionActivateExpressionInspector">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/expressionInspector_32.png</normaloff>:/Neutrino/Resources/16_32/expressionInspector_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Expression Inspector</string>
+   </property>
+   <property name="statusTip">
+    <string>Expression Inspector</string>
+   </property>
+  </action>
+  <action name="actionActivateSystemInspector">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/systemInspector_32.png</normaloff>:/Neutrino/Resources/16_32/systemInspector_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>System Inspector</string>
+   </property>
+   <property name="statusTip">
+    <string>System Inspector</string>
+   </property>
+  </action>
+  <action name="actionStatus_bar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Status bar</string>
+   </property>
+  </action>
+  <action name="actionHideAllWindows">
+   <property name="text">
+    <string>Hide All</string>
+   </property>
+   <property name="toolTip">
+    <string>Hides all UI elements except the 3D scene view</string>
+   </property>
+  </action>
+  <action name="actionShowAllWindows">
+   <property name="text">
+    <string>Show All</string>
+   </property>
+   <property name="toolTip">
+    <string>Shows all windows</string>
+   </property>
+  </action>
+  <action name="actionShowHideToobar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Tool bar</string>
+   </property>
+   <property name="toolTip">
+    <string>Shows/Hides the main toolbar</string>
+   </property>
+  </action>
+  <action name="actionTranslate">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/32/newtranslate.png</normaloff>:/Neutrino/Resources/32/newtranslate.png</iconset>
+   </property>
+   <property name="text">
+    <string>Translate</string>
+   </property>
+   <property name="shortcut">
+    <string>W</string>
+   </property>
+  </action>
+  <action name="actionRotate">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/32/newrotate.png</normaloff>:/Neutrino/Resources/32/newrotate.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rotate</string>
+   </property>
+   <property name="shortcut">
+    <string>E</string>
+   </property>
+  </action>
+  <action name="actionScale">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/32/newscale.png</normaloff>:/Neutrino/Resources/32/newscale.png</iconset>
+   </property>
+   <property name="text">
+    <string>Scale</string>
+   </property>
+   <property name="shortcut">
+    <string>R</string>
+   </property>
+  </action>
+  <action name="actionFull_screen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16/view-fullscreen.png</normaloff>:/Neutrino/Resources/16/view-fullscreen.png</iconset>
+   </property>
+   <property name="text">
+    <string>Fullscreen</string>
+   </property>
+   <property name="shortcut">
+    <string>F11</string>
+   </property>
+  </action>
+  <action name="actionActivateGPUBufInspector">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/openGL_32.png</normaloff>
+     <normalon>:/Neutrino/Resources/16_32/openGL_32.png</normalon>:/Neutrino/Resources/16_32/openGL_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Render View</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16/edit-undo.png</normaloff>:/Neutrino/Resources/16/edit-undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16/edit-redo.png</normaloff>:/Neutrino/Resources/16/edit-redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Redo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="actionWireframe">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/32/wireframe.png</normaloff>:/Neutrino/Resources/32/wireframe.png</iconset>
+   </property>
+   <property name="text">
+    <string>Set Selected Wireframe</string>
+   </property>
+   <property name="toolTip">
+    <string>Set Selected Wireframe</string>
+   </property>
+  </action>
+  <action name="actionCursor">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/32/cursor.png</normaloff>:/Neutrino/Resources/32/cursor.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cursor</string>
+   </property>
+   <property name="shortcut">
+    <string>Q</string>
+   </property>
+  </action>
+  <action name="actionCopy_Transforms">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/32/copytransform.png</normaloff>:/Neutrino/Resources/32/copytransform.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy Transforms</string>
+   </property>
+  </action>
+  <action name="actionSnap">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/32/snap.png</normaloff>:/Neutrino/Resources/32/snap.png</iconset>
+   </property>
+   <property name="text">
+    <string>Snap</string>
+   </property>
+  </action>
+  <action name="actionSet_Selected_Visible">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/32/visible.png</normaloff>:/Neutrino/Resources/32/visible.png</iconset>
+   </property>
+   <property name="text">
+    <string>Set Selected Visible</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+H</string>
+   </property>
+  </action>
+  <action name="actionSet_Selected_Hidden">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/32/invisible.png</normaloff>:/Neutrino/Resources/32/invisible.png</iconset>
+   </property>
+   <property name="text">
+    <string>Set Selected Hidden</string>
+   </property>
+   <property name="toolTip">
+    <string>Set Selected Hidden</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="actionSet_Selected_Bounding_Box">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/32/bounding-box.png</normaloff>:/Neutrino/Resources/32/bounding-box.png</iconset>
+   </property>
+   <property name="text">
+    <string>Set Selected Bounding Box</string>
+   </property>
+   <property name="toolTip">
+    <string>Set Selected Bounding Box</string>
+   </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
+  </action>
+  <action name="actionSet_Selected_Flat_Shaded">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/32/flatshaded.png</normaloff>:/Neutrino/Resources/32/flatshaded.png</iconset>
+   </property>
+   <property name="text">
+    <string>Set Selected Flat Shaded</string>
+   </property>
+   <property name="toolTip">
+    <string>Set Selected Flat Shaded</string>
+   </property>
+   <property name="shortcut">
+    <string>F3</string>
+   </property>
+  </action>
+  <action name="actionSet_Selected_Smooth_Shaded">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/32/smoothshading.png</normaloff>:/Neutrino/Resources/32/smoothshading.png</iconset>
+   </property>
+   <property name="text">
+    <string>Set Selected Smooth Shaded</string>
+   </property>
+   <property name="toolTip">
+    <string>Set Selected Smooth Shaded</string>
+   </property>
+   <property name="shortcut">
+    <string>F4</string>
+   </property>
+  </action>
+  <action name="actionSet_Selected_Active">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/32/active.png</normaloff>:/Neutrino/Resources/32/active.png</iconset>
+   </property>
+   <property name="text">
+    <string>Set Selected Active</string>
+   </property>
+   <property name="toolTip">
+    <string>Set Selected Active</string>
+   </property>
+  </action>
+  <action name="actionSet_Selected_Cache">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/32/cache.png</normaloff>:/Neutrino/Resources/32/cache.png</iconset>
+   </property>
+   <property name="text">
+    <string>Set Selected Cache</string>
+   </property>
+   <property name="toolTip">
+    <string>Set Selected Cache</string>
+   </property>
+  </action>
+  <action name="actionSet_Selected_Inactive">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/32/deactive.png</normaloff>:/Neutrino/Resources/32/deactive.png</iconset>
+   </property>
+   <property name="text">
+    <string>Set Selected Inactive</string>
+   </property>
+   <property name="toolTip">
+    <string>Set Selected Inactive</string>
+   </property>
+  </action>
+  <action name="actionGroup">
+   <property name="text">
+    <string>Group</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionUngroup">
+   <property name="text">
+    <string>Ungroup</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionDuplicate">
+   <property name="text">
+    <string>Duplicate</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="text">
+    <string>Cut</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="text">
+    <string>Copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="text">
+    <string>Paste</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionExport_Selection">
+   <property name="text">
+    <string>Export Selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+E</string>
+   </property>
+  </action>
+  <action name="actionExport_All">
+   <property name="text">
+    <string>Export All</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionImport">
+   <property name="text">
+    <string>Import</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionActivateConsole_Inspector">
+   <property name="text">
+    <string>Console Inspector</string>
+   </property>
+  </action>
+  <action name="actionVisualize">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>Resources/22/visualize.png</normaloff>Resources/22/visualize.png</iconset>
+   </property>
+   <property name="text">
+    <string>Visualize</string>
+   </property>
+  </action>
+  <action name="actionReference">
+   <property name="text">
+    <string>Reference</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionExternal_Renderer_Settings">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16/applications-multimedia.png</normaloff>:/Neutrino/Resources/16/applications-multimedia.png</iconset>
+   </property>
+   <property name="text">
+    <string>Offline Render Settings</string>
+   </property>
+  </action>
+  <action name="actionArchive">
+   <property name="text">
+    <string>Archive</string>
+   </property>
+  </action>
+  <action name="actionMaximize">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16/Maximize Window-16.png</normaloff>:/Neutrino/Resources/16/Maximize Window-16.png</iconset>
+   </property>
+   <property name="text">
+    <string>Maximize</string>
+   </property>
+  </action>
+  <action name="actionReload_Stylesheet">
+   <property name="text">
+    <string>Reload Stylesheet</string>
+   </property>
+  </action>
+  <action name="actionPreferences">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/preferences_32.png</normaloff>:/Neutrino/Resources/16_32/preferences_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Preferences</string>
+   </property>
+  </action>
+  <action name="actionParent">
+   <property name="text">
+    <string>Parent</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionUnParent">
+   <property name="text">
+    <string>Unparent</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+U</string>
+   </property>
+  </action>
+  <action name="actionActivateMainWindow">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/16_32/glWindow_32.png</normaloff>:/Neutrino/Resources/16_32/glWindow_32.png</iconset>
+   </property>
+   <property name="text">
+    <string>GL Interactive</string>
+   </property>
+  </action>
+  <action name="actionPreview">
+   <property name="icon">
+    <iconset resource="FDYN.qrc">
+     <normaloff>:/Neutrino/Resources/32/preview32.png</normaloff>:/Neutrino/Resources/32/preview32.png</iconset>
+   </property>
+   <property name="text">
+    <string>Render Player</string>
+   </property>
+  </action>
+  <action name="actionUpdate">
+   <property name="text">
+    <string>Update</string>
+   </property>
+  </action>
+  <action name="actionImportFRANX">
+   <property name="text">
+    <string>Import FRANX</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>NEDockWidget</class>
+   <extends>QDockWidget</extends>
+   <header>Widgets/Dock/NEDockWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>NESceneInspectorWindow</class>
+   <extends>QWidget</extends>
+   <header>Windows/SceneInspector/NESceneInspectorWindow.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FZoneInspectorWindow</class>
+   <extends>QWidget</extends>
+   <header>Windows/FZoneInspector/FZoneInspectorWindow.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>NESystemInspectorWindow</class>
+   <extends>QWidget</extends>
+   <header>Windows/SystemInspector/NESystemInspectorWindow.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>NEPropertyEditorWindow</class>
+   <extends>QWidget</extends>
+   <header>Windows/PropertyManager/NEPropertyEditorWindow.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>NEMessageWindow</class>
+   <extends>QWidget</extends>
+   <header>Windows/Message/NEMessageWindow.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>NESceneBuilderWindow</class>
+   <extends>QWidget</extends>
+   <header>Windows/SceneBuilder/NESceneBuilderWindow.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>NEMenu</class>
+   <extends>QMenu</extends>
+   <header>Widgets/Menu/NEMenu.h</header>
+  </customwidget>
+  <customwidget>
+   <class>NEShelfBar</class>
+   <extends>QToolBar</extends>
+   <header>Widgets/ShelfBar/NEShelfBar.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="FDYN.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>GUI</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>479</x>
+     <y>358</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOpen</sender>
+   <signal>triggered()</signal>
+   <receiver>GUI</receiver>
+   <slot>open()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>479</x>
+     <y>358</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionNew</sender>
+   <signal>triggered()</signal>
+   <receiver>GUI</receiver>
+   <slot>newScene()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>479</x>
+     <y>358</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAbout</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>statusBar</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>433</x>
+     <y>727</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSave</sender>
+   <signal>triggered()</signal>
+   <receiver>GUI</receiver>
+   <slot>save()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>639</x>
+     <y>359</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSaveAs</sender>
+   <signal>triggered()</signal>
+   <receiver>GUI</receiver>
+   <slot>saveAs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>639</x>
+     <y>359</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRender_Current_Frame</sender>
+   <signal>triggered()</signal>
+   <receiver>GUI</receiver>
+   <slot>renderCurrentFrame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>527</x>
+     <y>359</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionActivateTimeline</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>timelineToolbar</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>527</x>
+     <y>707</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStatus_bar</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>statusBar</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>433</x>
+     <y>727</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionShowHideToobar</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>toolBar</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>433</x>
+     <y>38</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionImport</sender>
+   <signal>triggered()</signal>
+   <receiver>GUI</receiver>
+   <slot>import()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>532</x>
+     <y>363</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExport_All</sender>
+   <signal>triggered()</signal>
+   <receiver>GUI</receiver>
+   <slot>exportAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>532</x>
+     <y>363</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExport_Selection</sender>
+   <signal>triggered()</signal>
+   <receiver>GUI</receiver>
+   <slot>exportSelected()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>532</x>
+     <y>363</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionReference</sender>
+   <signal>triggered()</signal>
+   <receiver>GUI</receiver>
+   <slot>reference()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>532</x>
+     <y>363</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionArchive</sender>
+   <signal>triggered()</signal>
+   <receiver>GUI</receiver>
+   <slot>archive()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>532</x>
+     <y>363</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>setAnimationFlagTrue()</slot>
+  <slot>setAnimationFlagFalse()</slot>
+  <slot>open()</slot>
+  <slot>save()</slot>
+  <slot>saveAs()</slot>
+  <slot>about()</slot>
+  <slot>newScene()</slot>
+  <slot>changeMode(int)</slot>
+  <slot>renderCurrentFrame()</slot>
+  <slot>renderSequence()</slot>
+  <slot>renderDeleteSequence()</slot>
+  <slot>exportCurrentFrame()</slot>
+  <slot>import()</slot>
+  <slot>exportAll()</slot>
+  <slot>exportSelected()</slot>
+ </slots>
+</ui>

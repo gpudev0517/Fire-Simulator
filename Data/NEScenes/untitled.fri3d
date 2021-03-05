@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--For the program to work correctly, creations should come first, then the connections, and finally the properties-->
+<nescene version="0.4">
+    <creations/>
+    <guicreations>
+        <guiobject type="glwindow" name="OpenGL0"/>
+    </guicreations>
+    <connections/>
+    <property_connections/>
+    <properties>
+        <Base>
+            <property name="objectName" val="Base"/>
+            <property name="osdMsgPos" val="Left"/>
+            <property name="verbose" val="false"/>
+            <property name="threads" val="8"/>
+        </Base>
+        <Scene>
+            <property name="objectName" val="Scene"/>
+            <property name="osdMsgPos" val="Left"/>
+            <property name="verbose" val="false"/>
+            <property name="timestep" val="0.02"/>
+            <property name="elapsedTime" val="0"/>
+            <property name="recordFrameRate" val="50"/>
+			<property name="frameNumber" val="0"/>
+            <property name="resetFrame" val="0"/>
+            <property name="rbdSolver" val="BulletPhysics"/>
+            <property name="rbdSolveMethod" val="SequentialImpulse"/>
+            <property name="playbackStartFrame" val="0"/>
+            <property name="playbackEndFrame" val="1000"/>
+            <property name="simulationEndFrame" val="1000"/>
+            <property name="cachePhysicals" val="false"/>
+            <property name="frameInfo" first="0" last="9" complete="1"/>
+            <property name="force_GL_Update" val="true"/>
+            <RenderSettings>
+                <property name="objectName" val="RenderSettings"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="fileType" val="0"/>
+                <property name="renderer" val="OpenGL"/>
+                <property name="threads" val="8"/>
+            </RenderSettings>
+            <DefaultGravity>
+                <property name="objectName" val="DefaultGravity"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="behavior" val="Active"/>
+                <property name="cacheData" val="true"/>
+                <property name="position" x="0" y="0" z="0"/>
+                <property name="orientation" phi="0" theta="0" psi="0"/>
+                <property name="scale" x="1" y="1" z="1"/>
+                <property name="pivot" x="0" y="0" z="0"/>
+                <property name="renderMode" val="SmoothShaded"/>
+                <property name="renderPriority" val="100"/>
+                <property name="color" r="0" g="0" b="255" a="255"/>
+                <property name="externalRender" val="true"/>
+                <property name="frameInfo" first="-1" last="0" complete="0"/>
+                <property name="gravity" x="0" y="-9.81" z="0"/>
+            </DefaultGravity>
+            <CamPersp>
+                <property name="objectName" val="CamPersp"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="behavior" val="Active"/>
+                <property name="cacheData" val="true"/>
+                <property name="position" x="-14.0054" y="23.8309" z="-15.0244"/>
+                <property name="orientation" phi="139.582" theta="-40.4811" psi="180"/>
+                <property name="scale" x="1.5" y="1.5" z="1.5"/>
+                <property name="pivot" x="0" y="0" z="0"/>
+                <property name="renderMode" val="SmoothShaded"/>
+                <property name="renderPriority" val="100"/>
+                <property name="color" r="0" g="0" b="255" a="255"/>
+                <property name="externalRender" val="true"/>
+                <property name="frameInfo" first="-1" last="0" complete="0"/>
+                <property name="fov" val="45"/>
+                <property name="nearClip" val="1"/>
+                <property name="farClip" val="5000"/>
+                <property name="lookAt" x="-0.428306" y="6.02039" z="0.883034"/>
+                <property name="sideVector" x="-0.76062" y="5.36442e-07" z="0.649197"/>
+                <property name="orthoWidth" val="5"/>
+                <property name="flipSide" val="false"/>
+                <property name="flipUp" val="false"/>
+                <property name="flipLook" val="false"/>
+            </CamPersp>
+            <CamTop>
+                <property name="objectName" val="CamTop"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="behavior" val="Active"/>
+                <property name="cacheData" val="true"/>
+                <property name="position" x="0" y="10" z="0"/>
+                <property name="orientation" phi="-90" theta="0" psi="0"/>
+                <property name="scale" x="1.5" y="1.5" z="1.5"/>
+                <property name="pivot" x="0" y="0" z="0"/>
+                <property name="renderMode" val="SmoothShaded"/>
+                <property name="renderPriority" val="100"/>
+                <property name="color" r="0" g="0" b="255" a="255"/>
+                <property name="externalRender" val="true"/>
+                <property name="frameInfo" first="-1" last="0" complete="0"/>
+                <property name="fov" val="45"/>
+                <property name="nearClip" val="-5000"/>
+                <property name="farClip" val="5000"/>
+                <property name="lookAt" x="0" y="0" z="0"/>
+                <property name="sideVector" x="1" y="0" z="0"/>
+				<property name="orthoType" val="Top"/>
+                <property name="orthoWidth" val="5"/>
+                <property name="flipSide" val="false"/>
+                <property name="flipUp" val="false"/>
+                <property name="flipLook" val="false"/>
+            </CamTop>
+            <CamLeft>
+                <property name="objectName" val="CamLeft"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="behavior" val="Active"/>
+                <property name="cacheData" val="true"/>
+                <property name="position" x="-10" y="0" z="0"/>
+                <property name="orientation" phi="180" theta="-90" psi="0"/>
+                <property name="scale" x="1.5" y="1.5" z="1.5"/>
+                <property name="pivot" x="0" y="0" z="0"/>
+                <property name="renderMode" val="SmoothShaded"/>
+                <property name="renderPriority" val="100"/>
+                <property name="color" r="0" g="0" b="255" a="255"/>
+                <property name="externalRender" val="true"/>
+                <property name="frameInfo" first="-1" last="0" complete="0"/>
+                <property name="fov" val="45"/>
+                <property name="nearClip" val="-5000"/>
+                <property name="farClip" val="5000"/>
+                <property name="lookAt" x="0" y="0" z="0"/>
+                <property name="sideVector" x="0" y="0" z="1"/>
+				<property name="orthoType" val="Left"/>
+                <property name="orthoWidth" val="5"/>
+                <property name="flipSide" val="false"/>
+                <property name="flipUp" val="false"/>
+                <property name="flipLook" val="false"/>
+            </CamLeft>
+            <CamFront>
+                <property name="objectName" val="CamFront"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="behavior" val="Active"/>
+                <property name="cacheData" val="true"/>
+                <property name="position" x="0" y="0" z="-10"/>
+                <property name="orientation" phi="180" theta="0" psi="0"/>
+                <property name="scale" x="1.5" y="1.5" z="1.5"/>
+                <property name="pivot" x="0" y="0" z="0"/>
+                <property name="renderMode" val="SmoothShaded"/>
+                <property name="renderPriority" val="100"/>
+                <property name="color" r="0" g="0" b="255" a="255"/>
+                <property name="externalRender" val="true"/>
+                <property name="frameInfo" first="-1" last="0" complete="0"/>
+                <property name="fov" val="45"/>
+                <property name="nearClip" val="-5000"/>
+                <property name="farClip" val="5000"/>
+                <property name="lookAt" x="0" y="0" z="0"/>
+                <property name="sideVector" x="1" y="0" z="0"/>
+				<property name="orthoType" val="Front"/>
+                <property name="orthoWidth" val="5"/>
+                <property name="flipSide" val="false"/>
+                <property name="flipUp" val="false"/>
+                <property name="flipLook" val="false"/>
+            </CamFront>
+            <DefaultLight>
+                <property name="objectName" val="DefaultLight"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="behavior" val="Active"/>
+                <property name="cacheData" val="true"/>
+                <property name="position" x="3" y="1" z="1"/>
+                <property name="orientation" phi="32.3115" theta="-108.435" psi="0"/>
+                <property name="scale" x="1" y="1" z="1"/>
+                <property name="pivot" x="0" y="0" z="0"/>
+                <property name="renderMode" val="SmoothShaded"/>
+                <property name="renderPriority" val="100"/>
+                <property name="color" r="255" g="255" b="255" a="255"/>
+                <property name="externalRender" val="true"/>
+                <property name="frameInfo" first="-1" last="0" complete="0"/>
+                <property name="mrvisibility" val="false"/>
+                <property name="energy" x="1000" y="1000" z="1000"/>
+                <property name="globIllumPhotons" val="20000"/>
+                <property name="causticPhotons" val="20000"/>
+                <property name="physical" val="false"/>
+                <property name="mcolor" x="1000" y="1000" z="1000"/>
+                <property name="pcolor" x="1" y="1" z="1"/>
+                <property name="direction" x="3" y="2" z="1"/>
+            </DefaultLight>
+            <DefaultMaterial>
+                <property name="objectName" val="DefaultMaterial"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="behavior" val="Active"/>
+                <property name="cacheData" val="true"/>
+                <property name="perPixel" val="true"/>
+                <property name="color" r="255" g="255" b="255" a="255"/>
+                <property name="kAmbient" val="0.100000001490116"/>
+                <property name="kDiffuse" val="1"/>
+                <property name="kSpecular" val="0.5"/>
+                <property name="ambient" r="128" g="128" b="128" a="255"/>
+                <property name="specular" r="255" g="255" b="255" a="255"/>
+                <property name="ambience" r="85" g="85" b="85" a="255"/>
+                <property name="trace" val="true"/>
+                <property name="shadow" val="3"/>
+                <property name="invertNormals" val="false"/>
+                <property name="caustic" val="none"/>
+                <property name="preset" val="MRMIA"/>
+                <property name="shininess" val="2"/>
+                <property name="povPhong" val="0"/>
+                <property name="povPhongSize" val="1065353216"/>
+                <property name="povSpecular" val="1"/>
+                <property name="povRoughness" val="0"/>
+                <property name="difWeight" val="1"/>
+                <property name="reflectivity" val="0"/>
+                <property name="roughness" val="0"/>
+                <property name="textured" val="false"/>
+                <property name="imgName" val=""/>
+                <property name="textureExport" val="MiaVectorExport"/>
+                <property name="Select" val="0"/>
+                <property name="Space" val="2"/>
+                <property name="Project" val="1"/>
+                <property name="RepeatX" val="1"/>
+                <property name="RepeatY" val="1"/>
+                <property name="RepeatZ" val="1"/>
+                <property name="Ambience" val="0.5"/>
+                <property name="Exponent" val="10"/>
+                <property name="LightMode" val="0"/>
+            </DefaultMaterial>
+        </Scene>
+        <GUI>
+            <property name="objectName" val="GUI"/>
+            <property name="osdMsgPos" val="Left"/>
+            <property name="verbose" val="false"/>
+            <property name="darkTheme" val="true"/>
+            <property name="saveGLFrames" val="false"/>
+            <property name="playbackStartFrame" val="0"/>
+            <property name="playbackEndFrame" val="1000"/>
+            <property name="simulationEndFrame" val="1000"/>
+            <OpenGL0>
+                <property name="objectName" val="OpenGL0"/>
+                <property name="camera" val="CamPersp"/>
+                <property name="showOsd" val="true"/>
+                <property name="osdTextColor" r="255" g="255" b="255" a="255"/>
+                <property name="manipSpace" val="Local"/>
+                <property name="viewAxes" val="true"/>
+                <property name="drawGrid" val="true"/>
+                <property name="GridSize" width="50" height="50"/>
+                <property name="CellSize" width="5" height="5"/>
+				<property name="AddGridLevel" val="true"/>
+                <property name="CellDivision" width="5" height="5"/>
+                <property name="AxisThickness" val="2.5"/>
+                <property name="GridThickness" val="2"/>
+                <property name="SubGridThickness" val="1"/>
+		
+                <property name="overlayGrid" val="false"/>
+                <property name="ssao" val="true"/>
+
+                <property name="type" val="Hbao"/>
+                <property name="intensity" val="1.5"/>
+                <property name="radius" val="2"/>
+                <property name="blurSharpness" val="1"/>
+                <property name="aaType" val="None"/>
+                <property name="msaaSampling" val="x4"/>
+                <property name="csaaMode" val="mode8x"/>
+                <property name="bfaaMode" val="multi2x"/>
+                <property name="transparencyType" val="NoTransparency"/>
+                <property name="depthPeelingIterations" val="6"/>
+                <property name="backgroundType" val="Real"/>
+                <property name="backgroundColor" r="111" g="115" b="141" a="255"/>
+                <property name="backgroundGradient" val="true"/>
+                <property name="backgroundGradColor" r="0" g="0" b="0" a="255"/>
+                <property name="backgroundRealColor" r="111" g="115" b="141" a="255"/>
+                <property name="backgroundTexture" val=""/>
+
+            </OpenGL0>
+        </GUI>
+    </properties>
+  
+</nescene>
