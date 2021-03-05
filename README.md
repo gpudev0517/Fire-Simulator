@@ -1,3 +1,3 @@
 # FDYN
 
-Fire Dynamics Toolkit
+Fire Simulator
