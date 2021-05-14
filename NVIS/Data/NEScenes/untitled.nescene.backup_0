@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--For the program to work correctly, creations should come first, then the connections, and finally the properties-->
+<nescene version="0.1">
+    <creations/>
+    <guicreations>
+        <guiobject type="glwindow" name="OpenGL0"/>
+    </guicreations>
+    <connections/>
+    <property_connections/>
+    <properties>
+        <Base>
+            <property name="objectName" val="Base"/>
+            <property name="osdMsgPos" val="Left"/>
+            <property name="verbose" val="false"/>
+            <property name="threads" val="8"/>
+
+            <Logger>
+                <property name="objectName" val="Logger"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="logging" val="false"/>
+                <property name="loggingTop" val="false"/>
+                <property name="logsPerSecondTop" val="10"/>
+                <property name="loggingTopRight" val="false"/>
+                <property name="logsPerSecondTopRight" val="10"/>
+                <property name="loggingRight" val="false"/>
+                <property name="logsPerSecondRight" val="10"/>
+                <property name="loggingBottomRight" val="false"/>
+                <property name="logsPerSecondBottomRight" val="10"/>
+                <property name="loggingBottom" val="false"/>
+                <property name="logsPerSecondBottom" val="10"/>
+                <property name="loggingBottomLeft" val="false"/>
+                <property name="logsPerSecondBottomLeft" val="10"/>
+                <property name="loggingLeft" val="false"/>
+                <property name="logsPerSecondLeft" val="10"/>
+                <property name="loggingTopLeft" val="false"/>
+                <property name="logsPerSecondTopLeft" val="10"/>
+            </Logger>
+        </Base>
+        <Scene>
+            <property name="objectName" val="Scene"/>
+            <property name="osdMsgPos" val="Left"/>
+            <property name="verbose" val="false"/>
+            <property name="timestep" val="0.02"/>
+            <property name="elapsedTime" val="0"/>
+            <property name="recordFrameRate" val="50"/>
+	    <property name="frameNumber" val="0"/>
+            <property name="resetFrame" val="0"/>
+            <property name="rbdSolver" val="BulletPhysics"/>
+            <property name="rbdSolveMethod" val="SequentialImpulse"/>
+            <property name="playbackStartFrame" val="0"/>
+            <property name="playbackEndFrame" val="1000"/>
+            <property name="simulationEndFrame" val="1000"/>
+            <property name="cachePhysicals" val="false"/>
+            <property name="frameInfo" first="0" last="9" complete="1"/>
+            <property name="force_GL_Update" val="true"/>
+            <RenderSettings>
+                <property name="objectName" val="RenderSettings"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="fileType" val="0"/>
+                <property name="renderer" val="OpenGL"/>
+                <property name="threads" val="8"/>
+                <PovraySettings>
+                    <property name="objectName" val="PovraySettings"/>
+                    <property name="Preset_Preset" val=""/>
+                    <property name="General_Quality" val="9"/>
+                    <property name="General_AA" val="0.300000011920929"/>
+                    <property name="General_Jitter" val="0"/>
+                    <property name="General_Max_Trace_Level" val="16"/>
+                    <property name="PhotonMapping_Photon_Mapping" val="true"/>
+                    <property name="PhotonMapping_PhotonCount" val="10"/>
+                    <property name="PhotonMapping_Autostop" val="0"/>
+                    <property name="Radiosity_Radiosity" val="false"/>
+                    <property name="Radiosity_Pretrace_Start" val="0.0799999982118607"/>
+                    <property name="Radiosity_Pretrace_End" val="0.00999999977648258"/>
+                    <property name="Radiosity_Count" val="320"/>
+                    <property name="Radiosity_Error_Bound" val="0.25"/>
+                    <property name="Radiosity_Recursion_Limit" val="1"/>
+                </PovraySettings>
+                <MentalRaySettings>
+                    <property name="objectName" val="MentalRaySettings"/>
+                    <property name="Preset_Preset" val="defaultPreset"/>
+                    <property name="General_Shadow" val="true"/>
+                    <property name="General_ContrastX" val="0.100000001490116"/>
+                    <property name="General_ContrastY" val="0.100000001490116"/>
+                    <property name="General_ContrastZ" val="0.100000001490116"/>
+                    <property name="General_ContrastW" val="0.100000001490116"/>
+                    <property name="General_Desaturate" val="false"/>
+                    <property name="General_Dither" val="false"/>
+                    <property name="General_MinSamples" val="-2"/>
+                    <property name="General_MaxSamples" val="0"/>
+                    <property name="General_Scanline" val="scan_on"/>
+                    <property name="General_Face" val="face_both"/>
+                    <property name="General_Hardware" val="hw_off"/>
+                    <property name="Iray_Iray" val="iray_off"/>
+                    <property name="Iray_ProgressiveRender" val="false"/>
+                    <property name="Iray_ProgMinSamples" val="0"/>
+                    <property name="Iray_ProgMaxSamples" val="0"/>
+                    <property name="Iray_ProgError" val="0"/>
+                    <property name="GI_Global_Illumination" val="false"/>
+                    <property name="GI_Accuracy_Photons" val="500"/>
+                    <property name="GI_Accuracy_Radius" val="1"/>
+                    <property name="GI_Scale" val="1"/>
+                    <property name="Caustics_Caustics" val="false"/>
+                    <property name="Caustics_Accuracy_Photons" val="100"/>
+                    <property name="Caustics_Accuracy_Radius" val="1"/>
+                    <property name="Caustics_Scale" val="1"/>
+                    <property name="PhotonVol_Accuracy_Photons" val="30"/>
+                    <property name="PhotonVol_Accuracy_Radius" val="0"/>
+                    <property name="PhotonVol_Scale" val="1"/>
+                    <property name="PhotonDepth_Reflect" val="5"/>
+                    <property name="PhotonDepth_Refract" val="5"/>
+                    <property name="PhotonDepth_Sum" val="5"/>
+                    <property name="TraceDepth_Trace" val="true"/>
+                    <property name="TraceDepth_Reflect" val="2"/>
+                    <property name="TraceDepth_Refract" val="2"/>
+                    <property name="TraceDepth_Sum" val="4"/>
+                    <property name="Acceleration_Acceleration" val="acc_bsp2"/>
+                    <property name="BSP_Depth" val="40"/>
+                    <property name="BSP_Size" val="10"/>
+                    <property name="BSP_Shadow" val="false"/>
+                    <property name="Importon" val="false"/>
+                    <property name="Importon_Density" val="1"/>
+                    <property name="Importon_TraceDepth" val="0"/>
+                    <property name="Importon_Traverse" val="true"/>
+                    <property name="FinalGather_FinalGather" val="fg_off"/>
+                    <property name="FinalGather_Rays" val="1000"/>
+                    <property name="FinalGather_Reflect" val="2"/>
+                    <property name="FinalGather_Refract" val="2"/>
+                    <property name="FinalGather_Diffuse" val="2"/>
+                    <property name="FinalGather_Sum" val="6"/>
+                    <property name="FinalGather_FilterSize" val="1"/>
+                    <property name="FinalGather_Points" val="10"/>
+                    <property name="FinalGather_PresampleDensity" val="1"/>
+                    <property name="FinalGather_ScaleR" val="1"/>
+                    <property name="FinalGather_ScaleG" val="1"/>
+                    <property name="FinalGather_ScaleB" val="1"/>
+                    <property name="FinalGather_ScaleA" val="1"/>
+                    <property name="FinalGather_SecScaleR" val="1"/>
+                    <property name="FinalGather_SecScaleG" val="1"/>
+                    <property name="FinalGather_SecScaleB" val="1"/>
+                    <property name="FinalGather_SecScaleA" val="1"/>
+                    <property name="FinalGather_FalloffStart" val="0"/>
+                    <property name="FinalGather_FalloffStop" val="0"/>
+                    <property name="FinalGather_Rebuild" val="true"/>
+                    <property name="IrradianceParticles_IP" val="false"/>
+                    <property name="IrradianceParticles_Rays" val="256"/>
+                    <property name="IrradianceParticles_IndirectPasses" val="0"/>
+                    <property name="MotionBlur_Shutter" val="0"/>
+                </MentalRaySettings>
+                <VTKSettings>
+                    <property name="objectName" val="VTKSettings"/>
+                </VTKSettings>
+            </RenderSettings>
+            <DefaultGravity>
+                <property name="objectName" val="DefaultGravity"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="behavior" val="Active"/>
+                <property name="cacheData" val="true"/>
+                <property name="position" x="0" y="0" z="0"/>
+                <property name="orientation" phi="0" theta="0" psi="0"/>
+                <property name="scale" x="1" y="1" z="1"/>
+                <property name="pivot" x="0" y="0" z="0"/>
+                <property name="renderMode" val="SmoothShaded"/>
+                <property name="renderPriority" val="100"/>
+                <property name="color" r="0" g="0" b="255" a="255"/>
+                <property name="externalRender" val="true"/>
+                <property name="frameInfo" first="-1" last="0" complete="0"/>
+                <property name="gravity" x="0" y="-9.81" z="0"/>
+            </DefaultGravity>
+            <CamPersp>
+                <property name="objectName" val="CamPersp"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="behavior" val="Active"/>
+                <property name="cacheData" val="true"/>
+                <property name="position" x="-14.0054" y="23.8309" z="-15.0244"/>
+                <property name="orientation" phi="139.582" theta="-40.4811" psi="180"/>
+                <property name="scale" x="1.5" y="1.5" z="1.5"/>
+                <property name="pivot" x="0" y="0" z="0"/>
+                <property name="renderMode" val="SmoothShaded"/>
+                <property name="renderPriority" val="100"/>
+                <property name="color" r="0" g="0" b="255" a="255"/>
+                <property name="externalRender" val="true"/>
+                <property name="frameInfo" first="-1" last="0" complete="0"/>
+                <property name="fov" val="45"/>
+                <property name="nearClip" val="1"/>
+                <property name="farClip" val="5000"/>
+                <property name="lookAt" x="-0.428306" y="6.02039" z="0.883034"/>
+                <property name="sideVector" x="-0.76062" y="5.36442e-07" z="0.649197"/>
+                <property name="orthoWidth" val="5"/>
+                <property name="flipSide" val="false"/>
+                <property name="flipUp" val="false"/>
+                <property name="flipLook" val="false"/>
+            </CamPersp>
+            <CamTop>
+                <property name="objectName" val="CamTop"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="behavior" val="Active"/>
+                <property name="cacheData" val="true"/>
+                <property name="position" x="0" y="10" z="0"/>
+                <property name="orientation" phi="-90" theta="0" psi="0"/>
+                <property name="scale" x="1.5" y="1.5" z="1.5"/>
+                <property name="pivot" x="0" y="0" z="0"/>
+                <property name="renderMode" val="SmoothShaded"/>
+                <property name="renderPriority" val="100"/>
+                <property name="color" r="0" g="0" b="255" a="255"/>
+                <property name="externalRender" val="true"/>
+                <property name="frameInfo" first="-1" last="0" complete="0"/>
+                <property name="fov" val="45"/>
+                <property name="nearClip" val="-5000"/>
+                <property name="farClip" val="5000"/>
+                <property name="lookAt" x="0" y="0" z="0"/>
+                <property name="sideVector" x="1" y="0" z="0"/>
+				<property name="orthoType" val="Top"/>
+                <property name="orthoWidth" val="5"/>
+                <property name="flipSide" val="false"/>
+                <property name="flipUp" val="false"/>
+                <property name="flipLook" val="false"/>
+            </CamTop>
+            <CamLeft>
+                <property name="objectName" val="CamLeft"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="behavior" val="Active"/>
+                <property name="cacheData" val="true"/>
+                <property name="position" x="-10" y="0" z="0"/>
+                <property name="orientation" phi="180" theta="-90" psi="0"/>
+                <property name="scale" x="1.5" y="1.5" z="1.5"/>
+                <property name="pivot" x="0" y="0" z="0"/>
+                <property name="renderMode" val="SmoothShaded"/>
+                <property name="renderPriority" val="100"/>
+                <property name="color" r="0" g="0" b="255" a="255"/>
+                <property name="externalRender" val="true"/>
+                <property name="frameInfo" first="-1" last="0" complete="0"/>
+                <property name="fov" val="45"/>
+                <property name="nearClip" val="-5000"/>
+                <property name="farClip" val="5000"/>
+                <property name="lookAt" x="0" y="0" z="0"/>
+                <property name="sideVector" x="0" y="0" z="1"/>
+				<property name="orthoType" val="Left"/>
+                <property name="orthoWidth" val="5"/>
+                <property name="flipSide" val="false"/>
+                <property name="flipUp" val="false"/>
+                <property name="flipLook" val="false"/>
+            </CamLeft>
+            <CamFront>
+                <property name="objectName" val="CamFront"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="behavior" val="Active"/>
+                <property name="cacheData" val="true"/>
+                <property name="position" x="0" y="0" z="-10"/>
+                <property name="orientation" phi="180" theta="0" psi="0"/>
+                <property name="scale" x="1.5" y="1.5" z="1.5"/>
+                <property name="pivot" x="0" y="0" z="0"/>
+                <property name="renderMode" val="SmoothShaded"/>
+                <property name="renderPriority" val="100"/>
+                <property name="color" r="0" g="0" b="255" a="255"/>
+                <property name="externalRender" val="true"/>
+                <property name="frameInfo" first="-1" last="0" complete="0"/>
+                <property name="fov" val="45"/>
+                <property name="nearClip" val="-5000"/>
+                <property name="farClip" val="5000"/>
+                <property name="lookAt" x="0" y="0" z="0"/>
+                <property name="sideVector" x="1" y="0" z="0"/>
+				<property name="orthoType" val="Front"/>
+                <property name="orthoWidth" val="5"/>
+                <property name="flipSide" val="false"/>
+                <property name="flipUp" val="false"/>
+                <property name="flipLook" val="false"/>
+            </CamFront>
+            <DefaultLight>
+                <property name="objectName" val="DefaultLight"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="behavior" val="Active"/>
+                <property name="cacheData" val="true"/>
+                <property name="position" x="3" y="1" z="1"/>
+                <property name="orientation" phi="32.3115" theta="-108.435" psi="0"/>
+                <property name="scale" x="1" y="1" z="1"/>
+                <property name="pivot" x="0" y="0" z="0"/>
+                <property name="renderMode" val="SmoothShaded"/>
+                <property name="renderPriority" val="100"/>
+                <property name="color" r="255" g="255" b="255" a="255"/>
+                <property name="externalRender" val="true"/>
+                <property name="frameInfo" first="-1" last="0" complete="0"/>
+                <property name="mrvisibility" val="false"/>
+                <property name="energy" x="1000" y="1000" z="1000"/>
+                <property name="globIllumPhotons" val="20000"/>
+                <property name="causticPhotons" val="20000"/>
+                <property name="physical" val="false"/>
+                <property name="mcolor" x="1000" y="1000" z="1000"/>
+                <property name="pcolor" x="1" y="1" z="1"/>
+                <property name="direction" x="3" y="2" z="1"/>
+            </DefaultLight>
+            <DefaultMaterial>
+                <property name="objectName" val="DefaultMaterial"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="behavior" val="Active"/>
+                <property name="cacheData" val="true"/>
+                <property name="perPixel" val="true"/>
+                <property name="color" r="255" g="255" b="255" a="255"/>
+                <property name="kAmbient" val="0.100000001490116"/>
+                <property name="kDiffuse" val="1"/>
+                <property name="kSpecular" val="0.5"/>
+                <property name="ambient" r="128" g="128" b="128" a="255"/>
+                <property name="specular" r="255" g="255" b="255" a="255"/>
+                <property name="ambience" r="85" g="85" b="85" a="255"/>
+                <property name="trace" val="true"/>
+                <property name="shadow" val="3"/>
+                <property name="invertNormals" val="false"/>
+                <property name="caustic" val="none"/>
+                <property name="preset" val="MRMIA"/>
+                <property name="shininess" val="2"/>
+                <property name="povPhong" val="0"/>
+                <property name="povPhongSize" val="1065353216"/>
+                <property name="povSpecular" val="1"/>
+                <property name="povRoughness" val="0"/>
+                <property name="difWeight" val="1"/>
+                <property name="reflectivity" val="0"/>
+                <property name="roughness" val="0"/>
+                <property name="textured" val="false"/>
+                <property name="imgName" val=""/>
+                <property name="textureExport" val="MiaVectorExport"/>
+                <property name="Select" val="0"/>
+                <property name="Space" val="2"/>
+                <property name="Project" val="1"/>
+                <property name="RepeatX" val="1"/>
+                <property name="RepeatY" val="1"/>
+                <property name="RepeatZ" val="1"/>
+                <property name="Ambience" val="0.5"/>
+                <property name="Exponent" val="10"/>
+                <property name="LightMode" val="0"/>
+            </DefaultMaterial>
+            <SortedHashingCollider>
+                <property name="objectName" val="SortedHashingCollider"/>
+                <property name="osdMsgPos" val="Left"/>
+                <property name="verbose" val="false"/>
+                <property name="timings" val="true"/>
+                <property name="statistics" val="true"/>
+                <property name="reorder" val="5373984"/>
+                <property name="fluidNeighborsVectorLimit" val="40"/>
+                <property name="nRing" val="1"/>
+                <property name="zCurveReorder" val="true"/>
+                <property name="tableSize" val="12582917"/>
+                <property name="postProcessSPH" val="false"/>
+                <property name="optimized_density_init" val="true"/>
+            </SortedHashingCollider>
+        </Scene>
+        <GUI>
+            <property name="objectName" val="GUI"/>
+            <property name="osdMsgPos" val="Left"/>
+            <property name="verbose" val="false"/>
+            <property name="darkTheme" val="true"/>
+            <property name="saveGLFrames" val="false"/>
+            <property name="playbackStartFrame" val="0"/>
+            <property name="playbackEndFrame" val="1000"/>
+            <property name="simulationEndFrame" val="1000"/>
+            <OpenGL0>
+                <property name="objectName" val="OpenGL0"/>
+                <property name="camera" val="CamPersp"/>
+                <property name="showOsd" val="true"/>
+                <property name="osdTextColor" r="255" g="255" b="255" a="255"/>
+                <property name="manipSpace" val="Local"/>
+                <property name="viewAxes" val="true"/>
+                <property name="drawGrid" val="true"/>
+                <property name="gridSize" width="40" height="40"/>
+                <property name="cellSize" val="1"/>
+                <property name="cellLineThickness" val="1"/>
+                <property name="gridColor" r="200" g="200" b="200" a="255"/>
+                <property name="overlayGrid" val="false"/>
+                <property name="clipping" val="false"/>
+                <property name="clipPlaneCount" val="1"/>
+                <property name="clipPlane1" x="0" y="0" z="0" w="0"/>
+                <property name="clipPlane2" x="0" y="0" z="0" w="0"/>
+                <property name="clipPlane3" x="0" y="0" z="0" w="0"/>
+                <property name="clipPlane4" x="0" y="0" z="0" w="0"/>
+                <property name="clipPlane5" x="0" y="0" z="0" w="0"/>
+                <property name="clipPlane6" x="0" y="0" z="0" w="0"/>
+                <property name="ssao" val="false"/>
+                <property name="kernelSize" val="1.22301e-32"/>
+                <property name="backgroundType" val="Color"/>
+                <property name="backgroundColor" r="128" g="128" b="128" a="255"/>
+                <property name="backgroundGradient" val="true"/>
+                <property name="backgroundTexture" val=""/>
+                <property name="drawRenderArea" val="false"/>
+                <property name="saveGLFrames" val="false"/>
+                <property name="savedFrameSize" width="800" height="600"/>
+                <property name="saveMotionMap" val="false"/>
+            </OpenGL0>
+        </GUI>
+    </properties>
+    <keyframes/>
+    <expressions/>
+    <propcbexprs/>
+    <GUI_STATE>
+        <PropertyEditor>
+            <expandedprops>
+                <OpenGL0>
+                    <drawGrid/>
+                    <gridColor/>
+                </OpenGL0>
+            </expandedprops>
+        </PropertyEditor>
+        <NodeGraphEditor>
+            <nodepositions>
+                <DefaultLight x="-400" y="-400"/>
+                <CamTop x="-400" y="-400"/>
+                <CamPersp x="-400" y="-400"/>
+                <CamLeft x="-400" y="-400"/>
+                <CamFront x="-400" y="-400"/>
+                <DefaultGravity x="-400" y="-400"/>
+                <DefaultMaterial x="400" y="0"/>
+            </nodepositions>
+        </NodeGraphEditor>
+        <SceneInspector>
+            <expandednodes>
+                <Scene expanded="1"/>
+                <DefaultGravity expanded="0"/>
+                <CamPersp expanded="0"/>
+                <CamTop expanded="0"/>
+                <CamLeft expanded="0"/>
+                <CamFront expanded="0"/>
+                <DefaultLight expanded="0"/>
+                <DefaultMaterial expanded="0"/>
+                <SortedHashingCollider expanded="0"/>
+            </expandednodes>
+        </SceneInspector>
+    </GUI_STATE>
+</nescene>

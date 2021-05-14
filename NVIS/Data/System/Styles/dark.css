@@ -1,0 +1,58 @@
+QToolBox::tab {
+	color: #f0f0f0;
+	background-color: #353535;
+	border: 1px solid black;
+	border-color: #191919;
+}
+QToolTip {
+	color: #f0d0f0;
+	background-color: #353535;
+	border: 1px solid black;
+	border-color: #191919;
+}
+QToolBar {
+	border: 1px solid black;
+	border-color: #292929;
+}
+QMenu::tearoff {
+	height: 8px;
+	background-color: #0A62BA;
+}
+QMenu::tearoff:selected {
+	height: 8px;
+	background-color: #2A82DA;
+}
+QMenu {
+    background-color: #292929;
+}
+
+QMenu::item {
+    padding: 4px 30px 4px 24px;
+    border: 1px solid transparent; /* reserve space for selection border */
+}
+
+QMenu::item:selected {
+    background-color: #2A82DA;
+    color: black;
+}
+
+QMenu::icon:checked { /* appearance of a 'checked' icon */
+    background: #0A62BA;
+    border: 1px solid #0A62BA;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+}
+
+QMenu::separator {
+    height: 1px;
+    background: black
+}
+
+QMenu::indicator {
+    width: 13px;
+    height: 13px;
+}
+

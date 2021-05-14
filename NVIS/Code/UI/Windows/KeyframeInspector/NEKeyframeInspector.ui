@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NEKeyframeInspector</class>
+ <widget class="QMainWindow" name="NEKeyframeInspector">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Keyframe Inspector</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../neutrino.qrc">
+    <normaloff>:/Neutrino/Resources/16_32/keyframeInspector_16.png</normaloff>:/Neutrino/Resources/16_32/keyframeInspector_16.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0" colspan="3">
+     <widget class="QPushButton" name="loadNodeButton">
+      <property name="text">
+       <string>Load Node</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QTableWidget" name="propertyNameTable">
+      <property name="showGrid">
+       <bool>false</bool>
+      </property>
+      <property name="columnCount">
+       <number>1</number>
+      </property>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>(none selected)</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QTableWidget" name="keyframeTable">
+      <property name="showGrid">
+       <bool>false</bool>
+      </property>
+      <property name="columnCount">
+       <number>1</number>
+      </property>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>(none selected)</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="3">
+     <widget class="QPushButton" name="removeButton">
+      <property name="text">
+       <string>Remove</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="NEMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="tearOffEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>Edit</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <action name="removeAction">
+   <property name="text">
+    <string>Remove</string>
+   </property>
+   <property name="toolTip">
+    <string>Remove keyframe</string>
+   </property>
+  </action>
+  <action name="removeAllAction">
+   <property name="text">
+    <string>Remove from all properties</string>
+   </property>
+   <property name="toolTip">
+    <string>Remove keyframe from all properties</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>NEMenuBar</class>
+   <extends>QMenuBar</extends>
+   <header>Widgets/MenuBar/NEMenuBar.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../neutrino.qrc"/>
+ </resources>
+ <connections/>
+</ui>

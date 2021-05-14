@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NEExternalRendererSettingsWindow</class>
+ <widget class="QMainWindow" name="NEExternalRendererSettingsWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>350</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>External Renderer Settings</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="NEObjectController" name="generalTab">
+       <attribute name="title">
+        <string>General Settings</string>
+       </attribute>
+      </widget>
+      <widget class="NEObjectController" name="specificTab">
+       <attribute name="title">
+        <string>Renderer Specific Settings</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>350</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionSave_preset"/>
+    <addaction name="actionLoad_preset"/>
+    <addaction name="separator"/>
+    <addaction name="actionReset_to_defaults"/>
+    <addaction name="actionRefresh"/>
+   </widget>
+   <addaction name="menuTools"/>
+  </widget>
+  <action name="actionSave_preset">
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/table_save.png</normaloff>:/Neutrino/Resources/16/table_save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save preset</string>
+   </property>
+  </action>
+  <action name="actionLoad_preset">
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/table_refresh.png</normaloff>:/Neutrino/Resources/16/table_refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Load preset</string>
+   </property>
+  </action>
+  <action name="actionReset_to_defaults">
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/table_delete.png</normaloff>:/Neutrino/Resources/16/table_delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reset to defaults</string>
+   </property>
+  </action>
+  <action name="actionRefresh">
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/table_refresh.png</normaloff>:/Neutrino/Resources/16/table_refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Refresh</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>NEObjectController</class>
+   <extends>QWidget</extends>
+   <header>Windows/PropertyManager/NEObjectController.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../neutrino.qrc"/>
+ </resources>
+ <connections/>
+</ui>

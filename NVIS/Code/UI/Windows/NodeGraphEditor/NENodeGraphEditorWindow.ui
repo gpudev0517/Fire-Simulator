@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NENodeGraphEditorWindow</class>
+ <widget class="QMainWindow" name="NENodeGraphEditorWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>8</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Node Graph Editor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../neutrino.qrc">
+    <normaloff>:/Neutrino/Resources/16_32/nodegraphEditor_16.png</normaloff>:/Neutrino/Resources/16_32/nodegraphEditor_16.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QTabWidget" name="nodeTabWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::TabFocus</enum>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="usesScrollButtons">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="modeling_node">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="title">
+        <string>Modeling Node Graph</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="simulation_node">
+       <attribute name="title">
+        <string>Simulation Node Graph</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="visualization_node">
+       <attribute name="title">
+        <string>Visualization Node Graph</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="NENodeGraphEditor" name="simulationNodeGraphicsView"/>
+    </item>
+    <item>
+     <widget class="NENodeGraphEditor" name="visualizationNodeGraphicsView"/>
+    </item>
+    <item>
+     <widget class="NENodeGraphEditor" name="modelingNodeGraphicsView">
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="renderHints">
+       <set>QPainter::Antialiasing|QPainter::TextAntialiasing</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="NEMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <widget class="QMenu" name="menuCurve">
+     <property name="title">
+      <string>Connections</string>
+     </property>
+     <widget class="QMenu" name="menuCurve_degree">
+      <property name="title">
+       <string>Curve degree</string>
+      </property>
+      <addaction name="actionLinear"/>
+      <addaction name="actionQuadratic"/>
+      <addaction name="actionCubic"/>
+     </widget>
+     <widget class="QMenu" name="menuType">
+      <property name="title">
+       <string>Type</string>
+      </property>
+      <addaction name="actionAll"/>
+      <addaction name="actionNode_connections"/>
+      <addaction name="actionProperty_connections"/>
+      <addaction name="actionInternal_connections"/>
+     </widget>
+     <addaction name="separator"/>
+     <addaction name="menuCurve_degree"/>
+     <addaction name="menuType"/>
+    </widget>
+    <widget class="QMenu" name="menuLayout">
+     <property name="title">
+      <string>Layout</string>
+     </property>
+     <addaction name="actionRandom"/>
+     <addaction name="actionCircle"/>
+     <addaction name="actionForce_Directed"/>
+     <addaction name="actionSpring"/>
+    </widget>
+    <widget class="QMenu" name="menuFilter">
+     <property name="title">
+      <string>Filter</string>
+     </property>
+     <widget class="QMenu" name="menuPort">
+      <property name="title">
+       <string>By Connection Type</string>
+      </property>
+      <addaction name="actionShow_ALL"/>
+      <addaction name="actionAny"/>
+      <addaction name="actionKIOParticles"/>
+      <addaction name="actionKIOTriangleMesh"/>
+      <addaction name="actionKIOForceField"/>
+      <addaction name="actionKIOExtent"/>
+      <addaction name="actionKIOVolume"/>
+      <addaction name="actionKIOFlowRate"/>
+      <addaction name="actionKIOFluidHeight"/>
+      <addaction name="actionKIONumParticles"/>
+      <addaction name="actionKIONumParticlesDrain"/>
+      <addaction name="actionKIOHydrostaticPressure"/>
+      <addaction name="actionKIOFluid"/>
+      <addaction name="actionKIORigid"/>
+      <addaction name="actionKIOMeasurement"/>
+      <addaction name="actionKIOGizmo"/>
+      <addaction name="actionKIOGeoConversion"/>
+     </widget>
+     <widget class="QMenu" name="menuBy_Node_Type">
+      <property name="geometry">
+       <rect>
+        <x>2047</x>
+        <y>183</y>
+        <width>320</width>
+        <height>1120</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>By Node Type</string>
+      </property>
+      <addaction name="actionNode_All"/>
+      <addaction name="actionKObjectExperimental"/>
+      <addaction name="actionkObjectFluid"/>
+      <addaction name="actionkObjectChemistry"/>
+      <addaction name="actionkObjectParticleFluidSolver"/>
+      <addaction name="actionKObjectParticleRigid"/>
+      <addaction name="actionKObjectParticleDeformable"/>
+      <addaction name="actionKObjectRigidSolver"/>
+      <addaction name="actionKObjectKiller"/>
+      <addaction name="actionkObjectGridFluidSolver"/>
+      <addaction name="actionKObjectCollider"/>
+      <addaction name="actionKObjectMeshing"/>
+      <addaction name="actionKObjectMaterial"/>
+      <addaction name="actionKObjectSecondaryParticles"/>
+      <addaction name="actionKObjectParticleSource"/>
+      <addaction name="actionKObjectMSS"/>
+      <addaction name="actionKObjectParticleSand"/>
+      <addaction name="actionKObjectCamera"/>
+      <addaction name="actionKObjectLight"/>
+      <addaction name="actionKObjectMeshPP"/>
+      <addaction name="actionKObjectDataField"/>
+      <addaction name="actionKObjectForceField"/>
+      <addaction name="actionKObjectParticleEmitter"/>
+      <addaction name="actionKObjectMeshVolumeOP"/>
+      <addaction name="actionKObjectVolumeOP"/>
+      <addaction name="actionKObjectMeasurementField"/>
+      <addaction name="actionKObjectGroup"/>
+      <addaction name="actionKObjectDataCollector"/>
+      <addaction name="actionKObjectGhostVolume"/>
+      <addaction name="actionKObjectOSD"/>
+      <addaction name="actionKObjectClipPlane"/>
+      <addaction name="actionKObjectGizmo"/>
+      <addaction name="actionKObjectGVDB"/>
+      <addaction name="actionKObjectDualBoundary"/>
+      <addaction name="actionKObjectConstrainer"/>
+     </widget>
+     <addaction name="menuPort"/>
+     <addaction name="menuBy_Node_Type"/>
+     <addaction name="actionBy_Node_Without_Connection"/>
+    </widget>
+    <addaction name="menuCurve"/>
+    <addaction name="menuLayout"/>
+    <addaction name="menuFilter"/>
+    <addaction name="actionFrame_Selection"/>
+    <addaction name="actionSnap_to_Grid"/>
+   </widget>
+   <addaction name="menuView"/>
+  </widget>
+  <action name="actionLinear">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Linear</string>
+   </property>
+  </action>
+  <action name="actionQuadratic">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Quadratic</string>
+   </property>
+  </action>
+  <action name="actionCubic">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Cubic</string>
+   </property>
+  </action>
+  <action name="actionAll">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>All</string>
+   </property>
+  </action>
+  <action name="actionNode_connections">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Node connections</string>
+   </property>
+  </action>
+  <action name="actionProperty_connections">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Property connections</string>
+   </property>
+  </action>
+  <action name="actionInternal_connections">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Internal connections</string>
+   </property>
+  </action>
+  <action name="actionRandom">
+   <property name="text">
+    <string>Random</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L, Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionCircle">
+   <property name="text">
+    <string>Circle</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L, Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionForce_Directed">
+   <property name="text">
+    <string>Force Directed</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L, Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionSpring">
+   <property name="text">
+    <string>Spring</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L, Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionAny">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Any</string>
+   </property>
+  </action>
+  <action name="actionShow_ALL">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>All</string>
+   </property>
+  </action>
+  <action name="actionKIOParticles">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kIOParticles</string>
+   </property>
+  </action>
+  <action name="actionKIOTriangleMesh">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kIOTriangleMesh</string>
+   </property>
+  </action>
+  <action name="actionKIOForceField">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kIOForceField</string>
+   </property>
+  </action>
+  <action name="actionKIOExtent">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kIOExtent</string>
+   </property>
+  </action>
+  <action name="actionKIOVolume">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kIOVolume</string>
+   </property>
+  </action>
+  <action name="actionKIOFlowRate">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kIOFlowRate</string>
+   </property>
+  </action>
+  <action name="actionKIOFluidHeight">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kIOFluidHeight</string>
+   </property>
+  </action>
+  <action name="actionKIONumParticles">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kIONumParticles</string>
+   </property>
+  </action>
+  <action name="actionKIONumParticlesDrain">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kIONumParticlesDrain</string>
+   </property>
+  </action>
+  <action name="actionKIOHydrostaticPressure">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kIOHydrostaticPressure</string>
+   </property>
+  </action>
+  <action name="actionKIOFluid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kIOFluid</string>
+   </property>
+  </action>
+  <action name="actionKIORigid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kIORigid</string>
+   </property>
+  </action>
+  <action name="actionKIOMeasurement">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kIOMeasurement</string>
+   </property>
+  </action>
+  <action name="actionKIOGizmo">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kIOGizmo</string>
+   </property>
+  </action>
+  <action name="actionKIOGeoConversion">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kIOGeoConversion</string>
+   </property>
+  </action>
+  <action name="actionBy_Node_Without_Connection">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>By Node WithOut Connection</string>
+   </property>
+  </action>
+  <action name="actionNode_All">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>All</string>
+   </property>
+  </action>
+  <action name="actionKObjectExperimental">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectExperimental</string>
+   </property>
+  </action>
+  <action name="actionkObjectFluid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectFluid</string>
+   </property>
+  </action>
+  <action name="actionkObjectChemistry">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectChemistry</string>
+   </property>
+  </action>
+  <action name="actionkObjectParticleFluidSolver">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectParticleFluidSolver</string>
+   </property>
+  </action>
+  <action name="actionKObjectParticleRigid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectParticleRigid</string>
+   </property>
+  </action>
+  <action name="actionKObjectParticleDeformable">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectParticleDeformable</string>
+   </property>
+  </action>
+  <action name="actionKObjectRigidSolver">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectRigidSolver</string>
+   </property>
+  </action>
+  <action name="actionKObjectKiller">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectKiller</string>
+   </property>
+  </action>
+  <action name="actionkObjectGridFluidSolver">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectGridFluidSolver</string>
+   </property>
+  </action>
+  <action name="actionKObjectCollider">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectCollider</string>
+   </property>
+  </action>
+  <action name="actionKObjectMeshing">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectMeshing</string>
+   </property>
+  </action>
+  <action name="actionKObjectMaterial">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectMaterial</string>
+   </property>
+  </action>
+  <action name="actionKObjectSecondaryParticles">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectSecondaryParticles</string>
+   </property>
+  </action>
+  <action name="actionKObjectParticleSource">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectParticleSource</string>
+   </property>
+  </action>
+  <action name="actionKObjectMSS">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectMSS</string>
+   </property>
+  </action>
+  <action name="actionKObjectParticleSand">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectParticleSand</string>
+   </property>
+  </action>
+  <action name="actionKObjectCamera">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectCamera</string>
+   </property>
+  </action>
+  <action name="actionKObjectLight">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectLight</string>
+   </property>
+  </action>
+  <action name="actionKObjectMeshPP">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectMeshPP</string>
+   </property>
+  </action>
+  <action name="actionKObjectDataField">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectDataField</string>
+   </property>
+  </action>
+  <action name="actionKObjectForceField">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectForceField</string>
+   </property>
+  </action>
+  <action name="actionKObjectParticleEmitter">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectParticleEmitter</string>
+   </property>
+  </action>
+  <action name="actionKObjectMeshVolumeOP">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectMeshVolumeOP</string>
+   </property>
+  </action>
+  <action name="actionKObjectVolumeOP">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectVolumeOP</string>
+   </property>
+  </action>
+  <action name="actionKObjectMeasurementField">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectMeasurementField</string>
+   </property>
+  </action>
+  <action name="actionKObjectGroup">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectGroup</string>
+   </property>
+  </action>
+  <action name="actionKObjectDataCollector">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectDataCollector</string>
+   </property>
+  </action>
+  <action name="actionKObjectGhostVolume">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectGhostVolume</string>
+   </property>
+  </action>
+  <action name="actionKObjectConstrainer">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectConstrainer</string>
+   </property>
+  </action>
+  <action name="actionKObjectDualBoundary">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectDualBoundary</string>
+   </property>
+  </action>
+  <action name="actionKObjectOSD">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectOSD</string>
+   </property>
+  </action>
+  <action name="actionKObjectClipPlane">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectClipPlane</string>
+   </property>
+  </action>
+  <action name="actionKObjectGizmo">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectGizmo</string>
+   </property>
+  </action>
+  <action name="actionKObjectGVDB">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>kObjectGVDB</string>
+   </property>
+  </action>
+  <action name="actionSimulationNodeGraph">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Simulation Node Graph</string>
+   </property>
+  </action>
+  <action name="actionVisualization_Node_Graph">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Visualization Node Graph</string>
+   </property>
+  </action>
+  <action name="actionModeling_Node_Graph">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Modeling Node Graph</string>
+   </property>
+  </action>
+  <action name="actionAll_Node_Graph">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>All</string>
+   </property>
+  </action>
+  <action name="actionFrame_Selection">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Frame Selection</string>
+   </property>
+   <property name="shortcut">
+    <string>F</string>
+   </property>
+  </action>
+  <action name="actionSnap_to_Grid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Snap to Grid</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>NEMenuBar</class>
+   <extends>QMenuBar</extends>
+   <header>Widgets/MenuBar/NEMenuBar.h</header>
+  </customwidget>
+  <customwidget>
+   <class>NENodeGraphEditor</class>
+   <extends>QGraphicsView</extends>
+   <header>Windows/NodeGraphEditor/NENodeGraphEditor.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../neutrino.qrc"/>
+ </resources>
+ <connections/>
+</ui>

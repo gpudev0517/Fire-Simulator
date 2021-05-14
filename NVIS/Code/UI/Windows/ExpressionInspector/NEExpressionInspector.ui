@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NEExpressionInspector</class>
+ <widget class="QMainWindow" name="NEExpressionInspector">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Animation Expression Inspector</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../neutrino.qrc">
+    <normaloff>:/Neutrino/Resources/16_32/expressionInspector_16.png</normaloff>:/Neutrino/Resources/16_32/expressionInspector_16.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="2">
+     <widget class="QTreeWidget" name="nodePropertyTree">
+      <column>
+       <property name="text">
+        <string>Node Property</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QTreeWidget" name="nodeNameTree">
+      <column>
+       <property name="text">
+        <string>Node Name</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="NEMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>NEMenuBar</class>
+   <extends>QMenuBar</extends>
+   <header>Widgets/MenuBar/NEMenuBar.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../neutrino.qrc"/>
+ </resources>
+ <connections/>
+</ui>

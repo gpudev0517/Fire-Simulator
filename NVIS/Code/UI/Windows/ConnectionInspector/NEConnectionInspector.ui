@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NEConnectionInspector</class>
+ <widget class="QMainWindow" name="NEConnectionInspector">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>424</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Connection Inspector - (Node-Node)</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../neutrino.qrc">
+    <normaloff>:/Neutrino/Resources/16_32/connectionInspector_16.png</normaloff>:/Neutrino/Resources/16_32/connectionInspector_16.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="1" column="0">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="nodeConnectionsPage">
+       <layout class="QGridLayout" name="gridLayout_3">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item row="4" column="2" colspan="3">
+         <widget class="QPushButton" name="removeNodeConnectionButton">
+          <property name="text">
+           <string>Remove Connection</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0" colspan="2">
+         <widget class="QLabel" name="allNodeConnectionsLabel">
+          <property name="text">
+           <string>All Node Connections</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0" colspan="5">
+         <widget class="QTreeWidget" name="allNodeConnectionsTable">
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContents</enum>
+          </property>
+          <property name="indentation">
+           <number>10</number>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <property name="allColumnsShowFocus">
+           <bool>true</bool>
+          </property>
+          <property name="columnCount">
+           <number>6</number>
+          </property>
+          <attribute name="headerCascadingSectionResizes">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="headerMinimumSectionSize">
+           <number>33</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>From</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string notr="true">To</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string notr="true">Order</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string notr="true">Type</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>From Slot</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>To Slot</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="swapNodesButton">
+          <property name="text">
+           <string>Swap</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="loadSourceNodeConnsButton">
+          <property name="text">
+           <string>Load Source</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QPushButton" name="connectNodesButton">
+          <property name="text">
+           <string>Connect</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="4">
+         <widget class="QPushButton" name="loadTargetNodeConnsButton">
+          <property name="text">
+           <string>Load Target</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <widget class="QTreeWidget" name="sourceNodeOutputsTable">
+          <property name="indentation">
+           <number>10</number>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>(none selected)</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Slot</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="1" column="2" colspan="3">
+         <widget class="QTreeWidget" name="targetNodeInputsTable">
+          <property name="indentation">
+           <number>10</number>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>(none selected)</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Slot</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="2">
+         <widget class="QLabel" name="nodeConnectionsLabel">
+          <property name="text">
+           <string>(none selected)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="5">
+         <widget class="QTreeWidget" name="connectedNodesTable">
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+          </property>
+          <property name="indentation">
+           <number>10</number>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <property name="allColumnsShowFocus">
+           <bool>true</bool>
+          </property>
+          <property name="columnCount">
+           <number>5</number>
+          </property>
+          <column>
+           <property name="text">
+            <string>To</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string notr="true">Type</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>From Slot</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>To Slot</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Order</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QSpinBox" name="orderSpinBox1">
+          <property name="specialValueText">
+           <string>Order</string>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="propertyConnectionsPage">
+       <layout class="QGridLayout" name="gridLayout_2">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item row="0" column="2">
+         <widget class="QPushButton" name="connectPropertiesButton">
+          <property name="text">
+           <string>Connect</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="loadSourcePropertiesButton">
+          <property name="text">
+           <string>Load Source</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="swapPropertiesButton">
+          <property name="text">
+           <string>Swap</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <widget class="QTreeWidget" name="sourcePropsTable">
+          <property name="indentation">
+           <number>10</number>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>(none selected)</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="0" column="4">
+         <widget class="QPushButton" name="loadTargetPropertiesButton">
+          <property name="text">
+           <string>Load Target</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2" colspan="3">
+         <widget class="QPushButton" name="savePropertyExpressionButton">
+          <property name="text">
+           <string>Save Expression</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0" colspan="2">
+         <widget class="QLabel" name="propertyConnectionsLabel">
+          <property name="text">
+           <string>(none selected)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0" colspan="2">
+         <widget class="QLabel" name="allPropertyConnectionsLabel">
+          <property name="text">
+           <string>All Property Connections</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0" colspan="5">
+         <widget class="QTreeWidget" name="connectedPropsTable">
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+          </property>
+          <property name="indentation">
+           <number>10</number>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <property name="allColumnsShowFocus">
+           <bool>true</bool>
+          </property>
+          <property name="columnCount">
+           <number>2</number>
+          </property>
+          <column>
+           <property name="text">
+            <string>To</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string notr="true">Type</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="7" column="0" colspan="5">
+         <widget class="QTreeWidget" name="allPropertyConnectionsTable">
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContents</enum>
+          </property>
+          <property name="indentation">
+           <number>10</number>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <property name="allColumnsShowFocus">
+           <bool>true</bool>
+          </property>
+          <property name="columnCount">
+           <number>3</number>
+          </property>
+          <attribute name="headerCascadingSectionResizes">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="headerMinimumSectionSize">
+           <number>33</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>From</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string notr="true">To</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string notr="true">Type</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="1" column="2" colspan="3">
+         <widget class="QTreeWidget" name="targetPropsTable">
+          <property name="indentation">
+           <number>10</number>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>(none selected)</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="5">
+         <widget class="NEPythonInput" name="propertyExpressionEdit"/>
+        </item>
+        <item row="6" column="2" colspan="3">
+         <widget class="QPushButton" name="removePropertyConnectionButton">
+          <property name="text">
+           <string>Remove Connection</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="2">
+         <widget class="QLabel" name="propertyConnectionExpLabel">
+          <property name="text">
+           <string>Connection Expression</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QSpinBox" name="orderSpinBox2">
+          <property name="specialValueText">
+           <string>Order</string>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="propertyCallbacksPage">
+       <layout class="QGridLayout" name="gridLayout_6">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item row="4" column="1">
+         <widget class="QPushButton" name="removeCallbackExpressionButton">
+          <property name="text">
+           <string>Remove Expression</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="callbackExpressionLabel">
+          <property name="text">
+           <string>Callback Expression</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="allCallbacksLabel">
+          <property name="text">
+           <string>All Callback Expressions</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="saveCallbackExpressionButton">
+          <property name="text">
+           <string>Save Expression</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="2">
+         <widget class="QPushButton" name="loadNodePropertiesButton">
+          <property name="text">
+           <string>Load Node</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="2">
+         <widget class="NEPythonInput" name="callbackExpressionEdit"/>
+        </item>
+        <item row="5" column="0" colspan="2">
+         <widget class="QTreeWidget" name="allCallbackExpressionsTable">
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContents</enum>
+          </property>
+          <property name="indentation">
+           <number>10</number>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <property name="allColumnsShowFocus">
+           <bool>true</bool>
+          </property>
+          <property name="columnCount">
+           <number>2</number>
+          </property>
+          <attribute name="headerCascadingSectionResizes">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="headerMinimumSectionSize">
+           <number>33</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>Node Property</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string notr="true">Expression</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QTreeWidget" name="nodePropsTable">
+          <property name="indentation">
+           <number>10</number>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>(none selected)</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QTreeWidget" name="activeNodeCallbacksTree">
+          <property name="indentation">
+           <number>10</number>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>Properties with Callback</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="internalConnectionsPage">
+       <layout class="QGridLayout" name="gridLayout_7">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item row="3" column="0">
+         <widget class="QLabel" name="incomingInternalConnsLabel">
+          <property name="text">
+           <string>Incoming Internal Connections</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="allInternalConnsLabel">
+          <property name="text">
+           <string>All Internal Connections</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QTreeWidget" name="outgoingInternalConnsTree">
+          <property name="indentation">
+           <number>10</number>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <property name="allColumnsShowFocus">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>From</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Signal</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>To</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Signal/Slot</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="4" column="0" colspan="2">
+         <widget class="QTreeWidget" name="incomingInternalConnsTree">
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+          </property>
+          <property name="indentation">
+           <number>10</number>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <property name="allColumnsShowFocus">
+           <bool>true</bool>
+          </property>
+          <property name="columnCount">
+           <number>4</number>
+          </property>
+          <column>
+           <property name="text">
+            <string>From</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string notr="true">Signal</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>To</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Signal/Slot</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="6" column="0" colspan="2">
+         <widget class="QTreeWidget" name="allInternalConnsTree">
+          <property name="sizeAdjustPolicy">
+           <enum>QAbstractScrollArea::AdjustToContents</enum>
+          </property>
+          <property name="indentation">
+           <number>10</number>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <property name="allColumnsShowFocus">
+           <bool>true</bool>
+          </property>
+          <property name="columnCount">
+           <number>4</number>
+          </property>
+          <attribute name="headerCascadingSectionResizes">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="headerMinimumSectionSize">
+           <number>33</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>From</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string notr="true">Signal</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string notr="true">To</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Signal/Slot</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="2">
+         <widget class="QPushButton" name="loadNodeButton">
+          <property name="text">
+           <string>Load Node</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="outgoingInternalConnsLabel">
+          <property name="text">
+           <string>Outgoing Internal Connections</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="NEMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>424</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionNode_connections"/>
+    <addaction name="actionProperty_connections"/>
+    <addaction name="actionProperty_callbacks"/>
+    <addaction name="actionInternal_connections"/>
+   </widget>
+   <addaction name="menuView"/>
+  </widget>
+  <action name="actionNode_connections">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Node connections</string>
+   </property>
+  </action>
+  <action name="actionProperty_connections">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Property connections</string>
+   </property>
+  </action>
+  <action name="actionProperty_callbacks">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Property callbacks</string>
+   </property>
+  </action>
+  <action name="actionInternal_connections">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Internal connections</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>NEMenuBar</class>
+   <extends>QMenuBar</extends>
+   <header>Widgets/MenuBar/NEMenuBar.h</header>
+  </customwidget>
+  <customwidget>
+   <class>NEPythonInput</class>
+   <extends>QPlainTextEdit</extends>
+   <header>Widgets/PythonInput/NEPythonInput.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../neutrino.qrc"/>
+ </resources>
+ <connections/>
+</ui>

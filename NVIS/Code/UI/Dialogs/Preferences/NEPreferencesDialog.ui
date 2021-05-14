@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NEPreferencesDialog</class>
+ <widget class="QDialog" name="NEPreferencesDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>780</width>
+    <height>548</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Preferences</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QTreeWidget" name="treeWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="headerHidden">
+        <bool>false</bool>
+       </property>
+       <column>
+        <property name="text">
+         <string>Categories</string>
+        </property>
+       </column>
+       <item>
+        <property name="text">
+         <string>Interface</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Plugins</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Timeline</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Shelf</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QStackedWidget" name="stackedWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>3</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <widget class="NEObjectController" name="interfacePage"/>
+       <widget class="QWidget" name="pluginsPage">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="NEPluginsTreeWidget" name="pluginsTree">
+           <property name="editTriggers">
+            <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
+           </property>
+           <property name="showDropIndicator" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="animated">
+            <bool>true</bool>
+           </property>
+           <attribute name="headerDefaultSectionSize">
+            <number>250</number>
+           </attribute>
+           <attribute name="headerMinimumSectionSize">
+            <number>150</number>
+           </attribute>
+           <column>
+            <property name="text">
+             <string>Type</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string notr="true">Filename</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="NEObjectController" name="timelinePage"/>
+       <widget class="QWidget" name="shelfPage">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QTreeWidget" name="shelfTree">
+           <property name="dragEnabled">
+            <bool>true</bool>
+           </property>
+           <property name="animated">
+            <bool>true</bool>
+           </property>
+           <property name="columnCount">
+            <number>4</number>
+           </property>
+           <column>
+            <property name="text">
+             <string>Name</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Help</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Script</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Icon</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QPushButton" name="shelfAddButton">
+             <property name="text">
+              <string>Add</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="shelfRemoveButton">
+             <property name="text">
+              <string>Remove</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="shelfEditButton">
+             <property name="text">
+              <string>Edit</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="restoreButton">
+       <property name="text">
+        <string>Restore Defaults</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="saveButton">
+       <property name="text">
+        <string>Save Settings</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="closeButton">
+       <property name="text">
+        <string>Close</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>NEPluginsTreeWidget</class>
+   <extends>QTreeWidget</extends>
+   <header>Windows/PluginManager/NEPluginsTreeWidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>NEObjectController</class>
+   <extends>QWidget</extends>
+   <header>Windows/PropertyManager/NEObjectController.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

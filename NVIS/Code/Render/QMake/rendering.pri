@@ -1,0 +1,2 @@
+#RENDERINGPATH = $$ROOTPATH/Code/Rendering
+

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NETitlebarWidget</class>
+ <widget class="QWidget" name="NETitlebarWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>24</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_2">
+   <property name="spacing">
+    <number>1</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>1</number>
+     </property>
+     <property name="sizeConstraint">
+      <enum>QLayout::SetMinimumSize</enum>
+     </property>
+     <item>
+      <widget class="QLabel" name="iconLabel">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QToolButton" name="dockButton">
+       <property name="toolTip">
+        <string>Dock/Undock Window</string>
+       </property>
+       <property name="text">
+        <string>a</string>
+       </property>
+       <property name="icon">
+        <iconset resource="neutrino.qrc">
+         <normaloff>:/Neutrino/Resources/16/pin.png</normaloff>:/Neutrino/Resources/16/pin.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>8</width>
+         <height>8</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="minimizeButton">
+       <property name="toolTip">
+        <string>Hide Window</string>
+       </property>
+       <property name="text">
+        <string>a</string>
+       </property>
+       <property name="icon">
+        <iconset resource="neutrino.qrc">
+         <normaloff>:/Neutrino/Resources/16/minimize.png</normaloff>:/Neutrino/Resources/16/minimize.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>8</width>
+         <height>8</height>
+        </size>
+       </property>
+       <property name="arrowType">
+        <enum>Qt::NoArrow</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="maximizeButton">
+       <property name="toolTip">
+        <string>Maximize Window</string>
+       </property>
+       <property name="text">
+        <string>a</string>
+       </property>
+       <property name="icon">
+        <iconset resource="neutrino.qrc">
+         <normaloff>:/Neutrino/Resources/16/maximize.png</normaloff>:/Neutrino/Resources/16/maximize.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>8</width>
+         <height>8</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="arrowType">
+        <enum>Qt::NoArrow</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="closeButton">
+       <property name="toolTip">
+        <string>Close Window</string>
+       </property>
+       <property name="text">
+        <string>a</string>
+       </property>
+       <property name="icon">
+        <iconset resource="neutrino.qrc">
+         <normaloff>:/Neutrino/Resources/16/cross15.png</normaloff>:/Neutrino/Resources/16/cross15.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>8</width>
+         <height>8</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="neutrino.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>minimizeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>NETitlebarWidget</receiver>
+   <slot>hideDock()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>356</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>11</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>maximizeButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>NETitlebarWidget</receiver>
+   <slot>maximizeDock(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>373</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>11</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dockButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>NETitlebarWidget</receiver>
+   <slot>dock(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>346</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>11</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>closeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>NETitlebarWidget</receiver>
+   <slot>closeDock()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>391</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>11</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>dock(bool)</slot>
+  <slot>maximizeDock(bool)</slot>
+  <slot>hideDock()</slot>
+  <slot>closeDock()</slot>
+ </slots>
+</ui>

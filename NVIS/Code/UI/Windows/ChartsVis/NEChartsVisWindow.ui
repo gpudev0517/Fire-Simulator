@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NEChartsVisWindow</class>
+ <widget class="QMainWindow" name="NEChartsVisWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Charts</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="NECustomPlot" name="customPlot" native="true"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="NEMenuBar" name="menubar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSaveAs"/>
+    <addaction name="actionSave_Anim_As"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionClear"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuTools"/>
+  </widget>
+  <action name="actionSaveAs">
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/document-save-as.png</normaloff>:/Neutrino/Resources/16/document-save-as.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save As</string>
+   </property>
+   <property name="toolTip">
+    <string>Save Scene As</string>
+   </property>
+   <property name="statusTip">
+    <string>Save Scene As</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+Shift+S</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WidgetWithChildrenShortcut</enum>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/document-new.png</normaloff>:/Neutrino/Resources/16/document-new.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Clear</string>
+   </property>
+   <property name="toolTip">
+    <string>Clear</string>
+   </property>
+   <property name="statusTip">
+    <string>Clear</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+N</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WidgetWithChildrenShortcut</enum>
+   </property>
+  </action>
+  <action name="actionSave_Anim_As">
+   <property name="text">
+    <string>Save Anim As</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>NEMenuBar</class>
+   <extends>QMenuBar</extends>
+   <header>Widgets/MenuBar/NEMenuBar.h</header>
+  </customwidget>
+  <customwidget>
+   <class>NECustomPlot</class>
+   <extends>QWidget</extends>
+   <header>Dialogs/Plot/NECustomPlot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../neutrino.qrc"/>
+ </resources>
+ <connections/>
+</ui>

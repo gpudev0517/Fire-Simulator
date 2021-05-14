@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NEPropertyEditorWindow</class>
+ <widget class="QMainWindow" name="NEPropertyEditorWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Property Editor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../neutrino.qrc">
+    <normaloff>:/Neutrino/Resources/16_32/propertyEditor_16.png</normaloff>:/Neutrino/Resources/16_32/propertyEditor_16.png</iconset>
+  </property>
+  <widget class="QWidget" name="centalWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="filterLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="filterLabel">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="../../neutrino.qrc">:/Neutrino/Resources/16/basket.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>false</bool>
+        </property>
+        <property name="margin">
+         <number>2</number>
+        </property>
+        <property name="indent">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="filterLineEdit">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="dragEnabled">
+         <bool>true</bool>
+        </property>
+        <property name="placeholderText">
+         <string>[Type property name]</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="addPropertyLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="addPropButton">
+        <property name="maximumSize">
+         <size>
+          <width>20</width>
+          <height>22</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Add property</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../../neutrino.qrc">
+          <normaloff>:/Neutrino/Resources/16/add.png</normaloff>:/Neutrino/Resources/16/add.png</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBoxOthers">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>3</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="editable">
+         <bool>true</bool>
+        </property>
+        <property name="currentText">
+         <string/>
+        </property>
+        <property name="currentIndex">
+         <number>-1</number>
+        </property>
+        <property name="insertPolicy">
+         <enum>QComboBox::NoInsert</enum>
+        </property>
+        <property name="frame">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBoxPropType">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="currentText">
+         <string/>
+        </property>
+        <property name="frame">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="NEObjectController" name="objController" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="NEMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionNew_editor"/>
+    <addaction name="actionReset_properties"/>
+    <addaction name="actionRefresh"/>
+    <addaction name="actionLoad_selected_object"/>
+    <addaction name="separator"/>
+    <addaction name="actionLoad_preset"/>
+    <addaction name="actionSave_preset"/>
+    <addaction name="separator"/>
+    <addaction name="actionAdd_property"/>
+    <addaction name="actionFilter_properties"/>
+   </widget>
+   <addaction name="menuTools"/>
+  </widget>
+  <action name="actionNew_editor">
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/table_add.png</normaloff>:/Neutrino/Resources/16/table_add.png</iconset>
+   </property>
+   <property name="text">
+    <string>New editor</string>
+   </property>
+  </action>
+  <action name="actionReset_properties">
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/table_delete.png</normaloff>:/Neutrino/Resources/16/table_delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reset properties</string>
+   </property>
+  </action>
+  <action name="actionRefresh">
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/table_refresh.png</normaloff>:/Neutrino/Resources/16/table_refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Force refresh</string>
+   </property>
+  </action>
+  <action name="actionLoad_selected_object">
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/table_go.png</normaloff>:/Neutrino/Resources/16/table_go.png</iconset>
+   </property>
+   <property name="text">
+    <string>Load selected object</string>
+   </property>
+  </action>
+  <action name="actionLoad_preset">
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/folder_table.png</normaloff>:/Neutrino/Resources/16/folder_table.png</iconset>
+   </property>
+   <property name="text">
+    <string>Load preset</string>
+   </property>
+  </action>
+  <action name="actionSave_preset">
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/table_save.png</normaloff>:/Neutrino/Resources/16/table_save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save preset</string>
+   </property>
+  </action>
+  <action name="actionFilter_properties">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/basket.png</normaloff>:/Neutrino/Resources/16/basket.png</iconset>
+   </property>
+   <property name="text">
+    <string>Filter properties</string>
+   </property>
+  </action>
+  <action name="actionAdd_property">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../neutrino.qrc">
+     <normaloff>:/Neutrino/Resources/16/add.png</normaloff>:/Neutrino/Resources/16/add.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add property</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>NEMenuBar</class>
+   <extends>QMenuBar</extends>
+   <header>Widgets/MenuBar/NEMenuBar.h</header>
+  </customwidget>
+  <customwidget>
+   <class>NEObjectController</class>
+   <extends>QWidget</extends>
+   <header>Windows/PropertyManager/NEObjectController.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../neutrino.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionFilter_properties</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>filterLabel</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>17</x>
+     <y>29</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFilter_properties</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>filterLineEdit</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>416</x>
+     <y>29</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAdd_property</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>comboBoxPropType</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>734</x>
+     <y>54</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAdd_property</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>addPropButton</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>784</x>
+     <y>54</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAdd_property</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>comboBoxOthers</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>379</x>
+     <y>53</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,3 +1,0 @@
-# FDYN
-
-Fire Simulator
