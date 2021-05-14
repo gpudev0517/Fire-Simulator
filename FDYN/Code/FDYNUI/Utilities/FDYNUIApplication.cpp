@@ -33,7 +33,7 @@ FDYNUIApplication::FDYNUIApplication(int &argc, char **argv)
 
     QApplication::setAttribute(Qt::AA_ShareOpenGLContexts, true);
     QApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
-    QCoreApplication::setAttribute(Qt::AA_UseDesktopOpenGL, true);
+    QApplication::setAttribute(Qt::AA_UseDesktopOpenGL, true);
 
 
     m_app   = std::shared_ptr< QApplication >( new QApplication( argc, argv ) );
